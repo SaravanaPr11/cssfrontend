@@ -16,16 +16,22 @@
   .logo {
     color: #d02323;
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: bold;
     justify-content: center;
     text-align: auto;
     margin-right: 500px;
   }
+
+  .logo a {
+    color: rgb(228, 217, 186); 
+    font-weight: bold; 
+    text-decoration: none; 
+  }
   
  .log{
     width: 250px;
-    height: 100px;
+    height: 80px;
     margin-right: 450px;
  }
  .log_left{
