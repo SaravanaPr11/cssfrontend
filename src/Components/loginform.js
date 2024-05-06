@@ -104,7 +104,7 @@ function LoginForm({ OnLogin }) {
         <br />
 
         <div style={{ display: 'flex', justifyContent: "space-around", width: "100%" }}>
-          <button className="btnlogin" type='submit' onClick={handleSubmit}>Submit</button>
+          <button className="btnlogin" type='submit' onClick={handleSubmit}>Login</button>
           <button className="btn1login" type='button' onClick={handleClear} aria-required 
           >Clear</button>
         </div>
