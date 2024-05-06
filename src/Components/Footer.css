@@ -1,7 +1,7 @@
 /* Footer Styles */
 .foot {
-    background-color:rgba(217, 226, 227, 0.841);
-        color: rgb(21, 20, 20);
+    background-color:rgba(13, 26, 52, 0.841);
+        color:rgba(217, 226, 227);
       text-align: center;
       padding: 3px;
       display: flex;
