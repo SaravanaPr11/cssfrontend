@@ -1,0 +1,35 @@
+/* Header styles */
+.header {
+    background-color:rgba(217, 226, 227, 0.841);
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100; /* Adjust the z-index as needed */
+  }
+  
+  /* Logo styles */
+  .logo {
+    color: #d02323;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    justify-content: center;
+    text-align: auto;
+    margin-right: 600px;
+  }
+  
+ .log{
+    width:100px;
+    height: 100px;
+margin-right: 500px;
+ }
+ .log_left{
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+ }
