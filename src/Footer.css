@@ -1,0 +1,15 @@
+/* Footer Styles */
+.foot {
+    background-color: #f4f4f4; /* Light background color */
+    color: #333; /* Dark text color */
+    text-align: center;
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    border-top: 1px solid #ccc; /* Subtle border on top for separation */
+    font-size: 14px; /* Standard font size */
+  }
+    

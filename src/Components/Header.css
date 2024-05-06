@@ -20,13 +20,13 @@
     font-weight: bold;
     justify-content: center;
     text-align: auto;
-    margin-right: 600px;
+    margin-right: 500px;
   }
   
  .log{
-    width:100px;
+    width: 250px;
     height: 100px;
-margin-right: 500px;
+    margin-right: 450px;
  }
  .log_left{
     display: flex;
