@@ -1,25 +1,29 @@
-import logo from './logo.svg';
+import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
+import Footer from "./Components/Footer";
+import LoginForm from './Components/loginform';// Import your Loginpage component
+import Profile from './Components/profile';
+import Header from './Components/Header';
+import React from 'react';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   
+    <BrowserRouter>
+    <div>
+      <Header />
+       <Routes>
+          <Route exact path='/' element={<LoginForm />} />
+          <Route exact path='/profile' element={<Profile />}></Route>
+        </Routes>
+        
+        <Footer />
+        </div>
+    </BrowserRouter>
+    
+    
   );
 }
 
 export default App;
+
