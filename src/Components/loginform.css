@@ -96,7 +96,7 @@ body{
     margin-top: 20px;
     color:rgb(13, 26, 52);
   border: 2px solid rgb(13, 26, 52);
-  margin-left: -50px;
+  margin-left: -40px;
 }
 .btnlogin:hover{
     transform:scale(1.1) ;

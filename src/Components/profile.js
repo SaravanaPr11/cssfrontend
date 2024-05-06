@@ -6,7 +6,7 @@ import api from './api/Api';
 
 
 const Profile = () => {
-  const [username, setUserName] = useState('')
+
   const [Name, setname] = useState(' ')
   const [dob, setDob] = useState('')
   const [phoneNo, setPhoneno] = useState('')
@@ -20,7 +20,6 @@ const Profile = () => {
   const [Email, setEmail] = useState('')
   const [state, setState] = useState('')
   const[stateerror,setstateerror]=useState(false)
-  const[password,setpassword]=useState(' ')
   const [customerId, setCustomerid] = useState(' ')
   
 
@@ -82,7 +81,6 @@ const Profile = () => {
       .then(response => {
         console.log('display all customer details', response.data);
         setname(response.data.Name)
-        setUserName(response.data.username)
         setDob(response.data.dob)
         setCity(response.data.city)
         setDoorstreet(response.data.door_street)
@@ -91,7 +89,6 @@ const Profile = () => {
         setPincode(response.data.pincode)
         setState(response.data.state)
         setPanno(response.data.panNo)
-        setpassword(response.data.password)
 
 
       })
@@ -131,9 +128,7 @@ else if(pincode === ''){
       panNo: panNo,
       state: state,
       phoneNo: phoneNo,
-      email: Email,
-      userName: username,
-      password:password
+      email: Email
     }
     console.log("sbgfjgsdkj", updateObj);
     try {
@@ -161,51 +156,39 @@ if(door_street && pincode && city && state){
     <h1 className='h1profil'>My Profile Details</h1>
     
     <div className='f1'>
-      <br/><br/>
-    <label className='lab'>Name:</label>
-    <input className='profilinput' type='text' name='name' value={Name} />
-    <br /><br />
-    <label className='lab'>Password:</label>
-    <input className='profilinput' type='text' name='password' value={password} />
-    <br /><br />
-    <label className='lab'>UserName:</label>
-    <input className='profilinput'  type='text' name='username' value={username}  />
-    <br /><br />
-    <label className='lab'>DOB:</label>
-    <input className='profilinput' type='text' name='date' value={dob} />
-    <br /><br />
-    <label className='lab'>Phone Number:</label>
-    <input className='profilinput' type='text' name='phone' value={phoneNo} />
-    <br /><br />
-    <label className='lab'>Pan No:</label>
-    <input className='profilinput' type='text' name='panno' value={panNo} />  
-    <br /><br />
-    </div>
-    <div className='f2'>
-    <label className='lab'>Email:</label>
-    <input className='profilinput'  type="text"  value={Email} />
-    <br /><br />
+  <label className='lab'>Name:</label>
+  <input className='profilinput' type='text' name='name' value={Name} onChange={(e) => setname(e.target.value)} />
+  <br /><br />
+  <label className='lab'>DOB:</label>
+  <input className='profilinput' type='text' name='date' value={dob} onChange={(e) => setDob(e.target.value)} />
+  <br /><br />
+  <label className='lab'>Phone Number:</label>
+  <input className='profilinput' type='text' name='phone' value={phoneNo} onChange={(e) => setPhoneno(e.target.value)} />
+  <br /><br />
+  <label className='lab'>Pan No:</label>
+  <input className='profilinput' type='text' name='panno' value={panNo} onChange={(e) => setPanno(e.target.value)} />  
+  <br /><br />
+  <label className='lab'>Email:</label>
+  <input className='profilinput' type="text" value={Email} onChange={(e) => setEmail(e.target.value)} />
     <label className='lab'>Door & Street:<span style={{ color: 'red' }}>*</span></label>
-    <input style={{ backgroundColor:"cyan" }} className='profilinput'  type='text' name='street' value={door_street} onChange={handledoorstreet} />
+    <input style={{ backgroundColor:"#edd1bc" }} className='profilinput'  type='text' name='street' value={door_street} onChange={handledoorstreet} />
     <span style={{ color: "red" }}>{door_streeterror}</span>
     <br /><br />
     <label className='lab'>City:<span style={{ color: 'red' }}>*</span></label>
-    <input style={{ backgroundColor:"cyan" }}  className='profilinput' type='text' name='city' value={city} onChange={handlecity}/>
+    <input style={{ backgroundColor:"#edd1bc" }}  className='profilinput' type='text' name='city' value={city} onChange={handlecity}/>
     <span style={{ color: "red" }}>{cityerror}</span>
     <br /><br />
     <label className='lab'>State:<span style={{ color: 'red' }}>*</span></label>
-    <input style={{ backgroundColor:"cyan" }}  className='profilinput' type='text' name='state' value={state} onChange={handlestate}/>
+    <input style={{ backgroundColor:"#edd1bc" }}  className='profilinput' type='text' name='state' value={state} onChange={handlestate}/>
     <span style={{ color: "red" }}>{stateerror}</span>
     <br /><br />
     <label className='lab'>Pincode:<span style={{ color: 'red' }}>*</span></label>
-    <input style={{ backgroundColor:"cyan" }}  className='profilinput' type='text' name='pincode'  value={pincode} onChange={handlepincode}/>
+    <input style={{ backgroundColor:"#edd1bc" }}  className='profilinput' type='text' name='pincode'  value={pincode} onChange={handlepincode}/>
     <span style={{ color: "red" }}>{pincodeerror}</span>
     </div>
     <button className='btnprofil' type="button" onClick={profileupdate}>Submit</button>
     <button className='btnn1profil' type="button" onClick={Backhandle}>Back</button>
-    
     </div>
-   
     </div>
   )
 }
