@@ -12,7 +12,7 @@
 }
 
 .Profile {
-  width: 60%;
+  width: 55%;
   background-color: rgba(13, 26, 52,0.9);
   border-radius: 1.5em;
   padding: 1.5em;
@@ -32,27 +32,29 @@
   display: block;
   margin-bottom: 2px;
   color: #fff;
-  margin-left: 3px;
+  margin-left: 1px;
+  margin-top: 1px;
+  margin-bottom: 1px;
 }
 
 .profilinput {
   width: calc(100% - 10px); /* Adjust width for padding */
   padding: 0px; /* Add padding */
   margin-bottom: 0px; 
-  border: 2px solid #fff;; /* Add border */
-  border-radius: 8px;
+  border: 2px solid #fff; /* Add border */
+  border-radius: 5px;
 }
 
 .btnprofil,
 .btnn1profil {
   width: 40%;
-  padding: 10px 0; /* Add padding */
+  padding: 5px 0; /* Add padding */
   background-color: #1695ab;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
-  margin-top: 5px;
+  margin-top: 10px;
   margin-bottom: 5px;
   margin-left: 50px;
 }
