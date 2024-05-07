@@ -32,39 +32,40 @@ function CustomerServiceMenu() {
 
 
   return (
-    <div >
-   <div className="cust_ser">
-   <div className="Wel">
-    <h1 >Welcome:{custname}</h1>
+    <div className="container">
+  <div className="cust_ser">
+    <div className="Wel">
+      <h1>Welcome:{custname}</h1>
     </div>
-  <div className="Customer">      
-            <h1 className="t1">Customer Service Menu</h1>
-             
-             </div>
+    <div className="Customer">
+      <h1 className="t1">Customer Service Menu</h1>
+    </div>
 
-        <div className="Customer1">
-            <div class= "icon1">
-                <i class="fa-solid fa-user"></i>
-                <a href="#" onClick={profilepage}><h1>My Profile</h1></a>
-            </div>
-            <div class= "icon2">
-                <i class="fa-solid fa-file-invoice"></i>
-                <a href="#" onClick={MyAccount}><h1>My Account</h1></a>
-            </div>
-            <div class= "icon3">
-                <i class="fa-solid fa-person-circle-question"></i>
-                <a href="#"onClick={ServiceRequestMenu }><h1>Make A Service Request</h1></a>
-            </div>
-            <div class= "icon4">
-                <a href="#" onClick={viewpage} ><h1>View Request Status</h1></a>
-            </div>
-        </div>
-        
-        <div className="btn-btn">
-     <button className="buttoncus" type="submit" onClick={signouthandle}>Back</button></div>
+    <div className="Customer1">
+  <button className="icon-button" onClick={profilepage}>
+    <i className="fa-solid fa-user"></i>
+    <span>My Profile</span>
+  </button>
+  <button className="icon-button" onClick={MyAccount}>
+    <i className="fa-solid fa-file-invoice"></i>
+    <span>My Account</span>
+  </button>
+  <button className="icon-button" onClick={ServiceRequestMenu}>
+    <i className="fa-solid fa-square-plus"></i>
+    <span>Make A Service Request</span>
+  </button>
+  <button className="icon-button" onClick={viewpage}>
+    <i className="fa-solid fa-person-circle-question"></i>
+    <span>View Request Status</span>
+  </button>
 </div>
-<button className='btnlogout' type="button" onClick={handlelogout}>Logout</button>
-</div> 
+
+    <div className="btn-box">
+      <button className="buttoncus" type="submit" onClick={signouthandle}>Back</button>
+      <button className="btnlogout" type="button" onClick={handlelogout}>Logout</button>
+    </div>
+  </div>
+</div>
   )
 }
 
