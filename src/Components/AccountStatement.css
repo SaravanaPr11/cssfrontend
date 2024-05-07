@@ -1,0 +1,76 @@
+.tablestate{
+  border-collapse: collapse;
+   margin-top: 70px;
+ 
+}
+table,th,td,tr{
+  border: 1px solid black;
+ 
+  height: 40px;
+  padding: auto 30px;
+  
+
+}
+.background{
+  display:flex;
+  justify-content: center;
+ font-size: 40px;
+ font-weight: bold;
+  margin-top: -60px;
+}
+.statname{
+  font-size: 25px;
+  margin-left: 700px;
+  margin-top: 30px;
+}
+.titstat{
+  border: 2px solid black;
+  background-color: rgb(160, 211, 141);
+  border-inline: 2px;
+  
+}
+.account-statement{
+  text-align: center;
+  /* background-color: rgb(152, 155, 155);
+  box-shadow: 0px 0px 5px #d50c0c1a; */
+  margin-top: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  width: 80%;
+  margin-left: 140px;
+}
+  
+  .d{
+    margin-left: 85px;
+    margin-top: 0%;
+  }
+  .back-button2{
+    display:inline-block;
+  padding: 10px 20px;
+    justify-content: center;
+    display: flex;
+    color: #ed1423;
+    font-size: larger;
+   background-color: #C2FBD7;
+   border-radius: 10px;
+   border-width: 0;
+   box-shadow: rgba(25, 25, 25, 0.04) 0 0 1px 0, rgba(0, 0, 0, 0.1) 0 3px 4px 0;
+   cursor: pointer;
+  margin-left: 750px;
+  margin-top: 60px;
+  }
+  .tablerow{
+    margin-top: 200px;
+    background-color: azure;
+    
+  }
+  .statelogout{
+    margin-left: 1350px;
+    background-color: burlywood;
+  }
+  .paginationacc{
+    margin-left: 770px;
+    margin-top: -100px;
+  }

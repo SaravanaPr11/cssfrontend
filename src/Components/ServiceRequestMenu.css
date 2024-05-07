@@ -1,0 +1,70 @@
+/* Style for the service container */
+.Service-Container {
+  text-align: center;
+  margin: 80px auto;
+  max-width: 800px;
+  padding: 5px;
+  margin-top: -30px;
+  height: 105px;
+}
+
+/* Style for the "Service Request Menu" heading */
+.Req h1 {
+  font-size: 40px;
+  margin-bottom: 5px;
+  margin-top: -30px;
+  color: #df15c8; /* Blue color for the heading */
+}
+
+/* Style for the list of service requests */
+.col {
+  list-style: none;
+  padding: 30px;
+  margin-top: 30px;
+}
+
+/* Style for each service request button */
+.Backbutton {
+  background-color: #45e918; /* Blue color for buttons */
+  color: rgb(14, 14, 14);
+  padding: 10px 20px;
+ margin-left: 700px;
+  border: none;
+  border-radius: 5px;
+  font-size: 25px;
+  cursor: pointer;
+  margin-top: 230px;
+  transition: background-color 0.3s;
+}
+.tag{
+  font-size: 35px;
+}
+
+/* Style for service request button on hover */
+.Backbutton:hover {
+  background-color: #e49648; /* Darker blue on hover */
+}
+
+/* Style for the back button */
+.Linkcolor {
+  background-color: rgb(204, 204, 204,.8); /* Light gray color for the back button */
+  color: rgb(51, 51, 51);
+  padding: 35px 20px;
+  margin-top: 60px;
+  border: none;
+  height: 300px;
+  border-radius: 5px;
+  font-size: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Style for the back button on hover */
+.Linkcolor:hover {
+  background-color: rgb(223, 121, 121,.8); /* Slightly darker gray on hover */
+}
+.menulogout{
+margin-top: 150px;
+margin-left: 1400px;
+background-color: burlywood;
+}
