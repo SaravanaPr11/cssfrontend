@@ -42,14 +42,24 @@ function CustomerServiceMenu() {
              
              </div>
 
-          <div className="Customer1">
-          <a href="#" onClick={profilepage}><h1>My Profile</h1></a>
-             
-            
+        <div className="Customer1">
+            <div class= "icon1">
+                <i class="fa-solid fa-user"></i>
+                <a href="#" onClick={profilepage}><h1>My Profile</h1></a>
+            </div>
+            <div class= "icon2">
+                <i class="fa-solid fa-file-invoice"></i>
                 <a href="#" onClick={MyAccount}><h1>My Account</h1></a>
+            </div>
+            <div class= "icon3">
+                <i class="fa-solid fa-person-circle-question"></i>
                 <a href="#"onClick={ServiceRequestMenu }><h1>Make A Service Request</h1></a>
+            </div>
+            <div class= "icon4">
                 <a href="#" onClick={viewpage} ><h1>View Request Status</h1></a>
-             </div>
+            </div>
+        </div>
+        
         <div className="btn-btn">
      <button className="buttoncus" type="submit" onClick={signouthandle}>Back</button></div>
 </div>
