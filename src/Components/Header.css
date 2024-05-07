@@ -17,22 +17,21 @@
     color: #d02323;
     text-decoration: none;
     font-size: 1.2rem;
-    font-weight: bold;
     justify-content: center;
     text-align: auto;
-    margin-right: 500px;
   }
 
   .logo a {
     color: rgb(228, 217, 186); 
     font-weight: bold; 
-    text-decoration: none; 
+    font-size: 20px;
+    text-decoration: none;
   }
   
  .log{
-    width: 250px;
+    width: 260px;
     height: 80px;
-    margin-right: 450px;
+    margin-right: 950px;
  }
  .log_left{
     display: flex;

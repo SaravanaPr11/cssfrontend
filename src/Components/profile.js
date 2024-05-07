@@ -158,30 +158,31 @@ if(door_street && pincode && city && state){
     <div className='f1'>
   <label className='lab'>Name:</label>
   <input className='profilinput' type='text' name='name' value={Name} onChange={(e) => setname(e.target.value)} />
-  <br /><br />
+  
   <label className='lab'>DOB:</label>
   <input className='profilinput' type='text' name='date' value={dob} onChange={(e) => setDob(e.target.value)} />
-  <br /><br />
+  
   <label className='lab'>Phone Number:</label>
   <input className='profilinput' type='text' name='phone' value={phoneNo} onChange={(e) => setPhoneno(e.target.value)} />
-  <br /><br />
+  
   <label className='lab'>Pan No:</label>
   <input className='profilinput' type='text' name='panno' value={panNo} onChange={(e) => setPanno(e.target.value)} />  
-  <br /><br />
+  
   <label className='lab'>Email:</label>
   <input className='profilinput' type="text" value={Email} onChange={(e) => setEmail(e.target.value)} />
+  
     <label className='lab'>Door & Street:<span style={{ color: 'red' }}>*</span></label>
     <input style={{ backgroundColor:"#edd1bc" }} className='profilinput'  type='text' name='street' value={door_street} onChange={handledoorstreet} />
     <span style={{ color: "red" }}>{door_streeterror}</span>
-    <br /><br />
+    
     <label className='lab'>City:<span style={{ color: 'red' }}>*</span></label>
     <input style={{ backgroundColor:"#edd1bc" }}  className='profilinput' type='text' name='city' value={city} onChange={handlecity}/>
     <span style={{ color: "red" }}>{cityerror}</span>
-    <br /><br />
+    
     <label className='lab'>State:<span style={{ color: 'red' }}>*</span></label>
     <input style={{ backgroundColor:"#edd1bc" }}  className='profilinput' type='text' name='state' value={state} onChange={handlestate}/>
     <span style={{ color: "red" }}>{stateerror}</span>
-    <br /><br />
+    
     <label className='lab'>Pincode:<span style={{ color: 'red' }}>*</span></label>
     <input style={{ backgroundColor:"#edd1bc" }}  className='profilinput' type='text' name='pincode'  value={pincode} onChange={handlepincode}/>
     <span style={{ color: "red" }}>{pincodeerror}</span>

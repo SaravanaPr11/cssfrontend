@@ -8,14 +8,15 @@
   display: flex;
   justify-content: center; 
   align-items: center; 
-  height: 200vh;
+  height: 100vh;
 }
 
 .Profile {
-  width: 70%;
+  width: 60%;
   background-color: rgba(13, 26, 52,0.9);
   border-radius: 1.5em;
   padding: 1.5em;
+  margin-top: 40px;
 }
 
 .h1profil {
@@ -23,20 +24,21 @@
   font-family: Calibri serif;
   text-transform: capitalize;
   text-align: center;
-  margin-bottom: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 20px;
 }
 
 .lab {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 2px;
   color: #fff;
   margin-left: 3px;
 }
 
 .profilinput {
-  width: calc(100% - 20px); /* Adjust width for padding */
-  padding: 8px; /* Add padding */
-  margin-bottom: 20px;
+  width: calc(100% - 10px); /* Adjust width for padding */
+  padding: 0px; /* Add padding */
+  margin-bottom: 0px; 
   border: 2px solid #fff;; /* Add border */
   border-radius: 8px;
 }
@@ -50,8 +52,9 @@
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
+  margin-top: 5px;
   margin-bottom: 5px;
-  margin-left: 60px;
+  margin-left: 50px;
 }
 
 .btnprofil:hover,
@@ -73,3 +76,4 @@
 .error {
   color: red;
 }
+

@@ -1,6 +1,7 @@
 import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
 import Footer from "./Components/Footer";
 import LoginForm from './Components/loginform';// Import your Loginpage component
+import CustomerServiceMenu from "./Components/CustomerServiceMenu";
 import Profile from './Components/profile';
 import Header from './Components/Header';
 import React from 'react';
@@ -14,9 +15,9 @@ function App() {
       <Header />
        <Routes>
           <Route exact path='/' element={<LoginForm />} />
+          <Route exact path='/CustomerServiceMenu' element={<CustomerServiceMenu />} />
           <Route exact path='/profile' element={<Profile />}></Route>
         </Routes>
-        
         <Footer />
         </div>
     </BrowserRouter>

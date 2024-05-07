@@ -84,7 +84,7 @@ function LoginForm({ OnLogin }) {
   return (
     <div className="body" >
       <div className="cover">
-        <h2 className='h2login'>Customer Self Service Account Login</h2>
+        <h2 className='h2login'>Customer Self Service Login</h2>
         <div className="input-group">
           <h3 className='h3login'>Username <span style={{ color: 'red' }}>*</span></h3>
           <div className="icon1">
