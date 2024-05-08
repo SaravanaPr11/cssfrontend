@@ -173,19 +173,19 @@ if(door_street && pincode && city && state){
   
     <label className='lab'>Door & Street:<span style={{ color: 'red' }}>*</span></label>
     <input style={{ backgroundColor:"#edd1bc" }} className='profilinput'  type='text' name='street' value={door_street} onChange={handledoorstreet} />
-    <span style={{ color: "red" }}>{door_streeterror}</span>
+    <span style={{ color: "red", display: "block"}}>{door_streeterror}</span>
     
     <label className='lab'>City:<span style={{ color: 'red' }}>*</span></label>
     <input style={{ backgroundColor:"#edd1bc" }}  className='profilinput' type='text' name='city' value={city} onChange={handlecity}/>
-    <span style={{ color: "red" }}>{cityerror}</span>
+    <span style={{ color: "red", display: "block"}}>{cityerror}</span>
     
     <label className='lab'>State:<span style={{ color: 'red' }}>*</span></label>
     <input style={{ backgroundColor:"#edd1bc" }}  className='profilinput' type='text' name='state' value={state} onChange={handlestate}/>
-    <span style={{ color: "red" }}>{stateerror}</span>
+    <span style={{ color: "red", display: "block" }}>{stateerror}</span>
     
     <label className='lab'>Pincode:<span style={{ color: 'red' }}>*</span></label>
     <input style={{ backgroundColor:"#edd1bc" }}  className='profilinput' type='text' name='pincode'  value={pincode} onChange={handlepincode}/>
-    <span style={{ color: "red" }}>{pincodeerror}</span>
+    <span style={{ color: "red", display: "block" }}>{pincodeerror}</span>
     </div>
     <button className='btnprofil' type="button" onClick={profileupdate}>Submit</button>
     <button className='btnn1profil' type="button" onClick={Backhandle}>Back</button>

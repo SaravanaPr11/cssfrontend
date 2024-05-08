@@ -5,6 +5,7 @@ import MyAccount from "./Components/MyAccount";
 import AccountStatement from './Components/AccountStatement';
 import ServiceRequestMenu from "./Components/ServiceRequestMenu";
 import CustomerServiceMenu from "./Components/CustomerServiceMenu";
+import RequestStatus from './Components/viewrequest';
 import Profile from './Components/profile';
 import Header from './Components/Header';
 import React from 'react';
@@ -23,6 +24,7 @@ function App() {
           <Route exact path='/MyAccount' element={<MyAccount />} />
           <Route exact path='/AccountStatement' element={<AccountStatement />} />
           <Route exact path='/ServiceRequestMenu' element={<ServiceRequestMenu />} />
+          <Route exact path='/view' element={<RequestStatus/>}></Route>
         </Routes>
         <Footer />
         </div>
