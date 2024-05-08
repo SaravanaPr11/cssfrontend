@@ -1,7 +1,7 @@
 /* Styling for the main container */
 .cust_ser {
     display: flex;
-    flex-direction: column;
+    flex-direction: column;    
     align-items: center;
     justify-content: center;
     font-size: 20px;
@@ -30,7 +30,9 @@
 /* Styling for the Customer1 section */
 .Customer1 {
     align-self: center;
+    justify-content: center;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     text-align: center;
     margin-top: 30px;
@@ -47,12 +49,12 @@
 
 /* Styling for the button section */
 .buttoncus {
-    background-color: #007bff;
+    background-color: burlywood;
     color: #150101;
     padding: 10px 20px;
     border: none;
     cursor: pointer;
-    width: 80px;
+    width: 60px;
 }
 .Wel {
     color: white;
@@ -76,18 +78,9 @@
     height: 100vh;
   }
 
-  .button-link {
-    text-decoration: none;
-    color: inherit;
-  }
-  
-  .button-link:hover {
-    text-decoration: none;
-  }
-
   .buttoncus,
 .btnlogout {
-  padding: 10px 20px;
+  padding: 10px;
   margin: 5px;
   border: none;
   border-radius: 5px;
@@ -97,7 +90,7 @@
 
 .buttoncus:hover,
 .btnlogout:hover {
-  background-color: #fff;
+  background-color: rgb(216, 149, 62);
   color: rgb(13, 26, 52);
 }
 

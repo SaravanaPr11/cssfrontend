@@ -1,70 +1,88 @@
-/* Style for the service container */
-.Service-Container {
+.Service {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  height: 60vh;
+  width: 80%;
+  margin-top: 30px;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  background-color: rgba(13, 26, 52, 0.9);
   text-align: center;
-  margin: 80px auto;
-  max-width: 800px;
-  padding: 5px;
-  margin-top: -30px;
-  height: 105px;
+  border-radius: 20px;
+  position: fixed;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%) translateY(10%);
 }
 
-/* Style for the "Service Request Menu" heading */
+/* Styling for the Service-Container section */
+.Service-Container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Styling for the header */
 .Req h1 {
-  font-size: 40px;
-  margin-bottom: 5px;
-  margin-top: -30px;
-  color: #df15c8; /* Blue color for the heading */
+  font-size: 22px;
+  text-transform: capitalize;
+  color: #e4d9ba;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Style for the list of service requests */
-.col {
-  list-style: none;
-  padding: 30px;
+/* Styling for the links section */
+.Linkcolor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   margin-top: 30px;
 }
 
-/* Style for each service request button */
-.Backbutton {
-  background-color: #45e918; /* Blue color for buttons */
-  color: rgb(14, 14, 14);
+/* Styling for the buttons */
+.tag {
+  background-color: #fff;
+  color: rgb(13, 26, 52);
   padding: 10px 20px;
- margin-left: 700px;
   border: none;
-  border-radius: 5px;
-  font-size: 25px;
   cursor: pointer;
-  margin-top: 230px;
-  transition: background-color 0.3s;
-}
-.tag{
-  font-size: 35px;
+  margin-bottom: 10px; /* Adjusted margin bottom */
+  border-radius: 15px;
+  transition: background-color 0.3s ease; 
 }
 
-/* Style for service request button on hover */
+/* Styling for the logout button */
+.menulogout {
+  background-color: burlywood;
+  color: #150101;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 10px; /* Adjusted margin bottom */
+  border-radius: 5px;
+  transition: background-color 0.3s ease; 
+}
+
+/* Styling for the back button */
+.Backbutton {
+  background-color: #fff;
+  color: rgb(13, 26, 52);
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100px; /* Adjusted width */
+  border-radius: 5px;
+  transition: background-color 0.3s ease; 
+}
+
+/* Hover effect for buttons */
+.tag:hover,
+.menulogout:hover,
 .Backbutton:hover {
-  background-color: #e49648; /* Darker blue on hover */
-}
-
-/* Style for the back button */
-.Linkcolor {
-  background-color: rgb(204, 204, 204,.8); /* Light gray color for the back button */
-  color: rgb(51, 51, 51);
-  padding: 35px 20px;
-  margin-top: 60px;
-  border: none;
-  height: 300px;
-  border-radius: 5px;
-  font-size: 25px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-/* Style for the back button on hover */
-.Linkcolor:hover {
-  background-color: rgb(223, 121, 121,.8); /* Slightly darker gray on hover */
-}
-.menulogout{
-margin-top: 150px;
-margin-left: 1400px;
-background-color: burlywood;
+  background-color: #cfcfcf; /* Lighter shade for hover */
 }

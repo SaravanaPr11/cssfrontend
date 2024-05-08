@@ -1,76 +1,102 @@
-.tablestate{
-  border-collapse: collapse;
-   margin-top: 70px;
- 
-}
-table,th,td,tr{
-  border: 1px solid black;
- 
-  height: 40px;
-  padding: auto 30px;
-  
-
-}
-.background{
-  display:flex;
-  justify-content: center;
- font-size: 40px;
- font-weight: bold;
-  margin-top: -60px;
-}
-.statname{
-  font-size: 25px;
-  margin-left: 700px;
-  margin-top: 30px;
-}
-.titstat{
-  border: 2px solid black;
-  background-color: rgb(160, 211, 141);
-  border-inline: 2px;
-  
-}
-.account-statement{
+/* Styling for the main container */
+.account-statement {
   text-align: center;
-  /* background-color: rgb(152, 155, 155);
-  box-shadow: 0px 0px 5px #d50c0c1a; */
-  margin-top: 150px;
+  /* background-color: rgb(152, 155, 155); */
+  /* box-shadow: 0px 0px 5px #d50c0c1a; */
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
   width: 80%;
-  margin-left: 140px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 70vh; /* Adjusted height */
 }
-  
-  .d{
-    margin-left: 85px;
-    margin-top: 0%;
-  }
-  .back-button2{
-    display:inline-block;
+
+/* Styling for the background header */
+.background {
+  margin-top: -35px;
+  font-size: 20px; /* Increased font size */
+  color: #e4d9ba;
+  font-weight: bold; /* Adjusted margin-top */
+}
+
+/* Styling for the account number */
+.statname {
+  font-size: 20px;
+  margin-top: 10px; /* Adjusted margin-top */
+}
+
+/* Styling for the table */
+.tablestate {
+  border-collapse: collapse;
+  margin-top: 10px; /* Adjusted margin-top */
+  width: 100%;
+}
+
+/* Styling for table elements */
+table,
+th,
+td,
+tr {
+  border: 1px solid black;
+  height: 40px;
+  padding: auto 20px; /* Adjusted padding */
+}
+
+/* Styling for the table header */
+.titstat {
+  border: 2px solid black;
+  background-color: rgb(160, 211, 141);
+  border-inline: 2px;
+}
+
+/* Styling for the table rows */
+.tablerow {
+  background-color: azure;
+}
+
+/* Styling for the logout button */
+.statelogout {
+  background-color: burlywood;
+  margin-top: 70px; /* Adjusted margin-top */
+  margin-left: 100%;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Styling for the back button */
+.back-button2 {
   padding: 10px 20px;
-    justify-content: center;
-    display: flex;
-    color: #ed1423;
-    font-size: larger;
-   background-color: #C2FBD7;
-   border-radius: 10px;
-   border-width: 0;
-   box-shadow: rgba(25, 25, 25, 0.04) 0 0 1px 0, rgba(0, 0, 0, 0.1) 0 3px 4px 0;
-   cursor: pointer;
-  margin-left: 750px;
-  margin-top: 60px;
-  }
-  .tablerow{
-    margin-top: 200px;
-    background-color: azure;
-    
-  }
-  .statelogout{
-    margin-left: 1350px;
-    background-color: burlywood;
-  }
-  .paginationacc{
-    margin-left: 770px;
-    margin-top: -100px;
-  }
+  justify-content: center;
+  display: flex;
+  color: rgb(13, 26, 52);
+  font-size: larger;
+  background-color: burlywood;
+  border-radius: 10px;
+  border-width: 0;
+  box-shadow: rgba(25, 25, 25, 0.04) 0 0 1px 0, rgba(0, 0, 0, 0.1) 0 3px 4px 0;
+  cursor: pointer; /* Adjusted margin-top */
+  margin-left: 47%;
+}
+
+/* Styling for the pagination */
+.Pagination {
+  margin-top: 20px; /* Adjusted margin-top */
+  display: flex;
+  justify-content: center;
+  padding: 8px 16px;
+  margin-right: 20px;
+}
+
+.PageNumber{
+  color: white;
+  background-color: black;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-family: calibri;
+  text-align: center;
+}

@@ -33,25 +33,23 @@ const handlelogout=()=>{
         </div>
         <div className="Linkcolor">
           <br />
-          <button className="tag" onClick={checkhandle}>Request a new Cheque book</button><br /><br />
-          <button className="tag" onClick={cardhandle}>Request a new credit or debit Card</button><br /><br />
-          <button className="tag" onClick={stolenhandle}>Report Stolen / Lost Card</button><br/><br/><br/>
-        {/* <ul className="col">
-          {serviceRequests.map((request) => (
-            <li key={request.id}>
-              <button onClick={() => handleRequestClick(request.id)}>
-                <h2>{request.label}</h2>
-              </button>
-            </li>
-          ))}</ul> */}
-        
+          <button className="tag" onClick={checkhandle}>
+            <i class="fa-solid fa-money-check"></i>
+            <span>Request a new Cheque book</span>
+          </button>
+          <button className="tag" onClick={cardhandle}>
+          <i class="fa-solid fa-credit-card"></i>
+          <span>Request a new credit or debit Card</span>
+          </button>
+          <button className="tag" onClick={stolenhandle}>
+          <i class="fa-solid fa-person-circle-exclamation"></i>
+          <span>Report Stolen / Lost Card</span>
+          </button><br/>
         </div>
         </div>
       <button type="button" className="Backbutton" onClick={handleBack}>
           Back
         </button>
-        
-     
     </div>
   );
 };
