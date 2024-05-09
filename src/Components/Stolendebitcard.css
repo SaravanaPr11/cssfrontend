@@ -1,7 +1,8 @@
 .stolenlogout {
   background-color: burlywood;
   border: none;
-  color: white;
+  border-radius: 10px;
+  color:  #0D1A34D6;
   padding: 10px 24px;
   text-align: center;
   text-decoration: none;
@@ -9,21 +10,26 @@
   font-size: 16px;
   margin: auto;
   cursor: pointer;
-  transform: translate(1200px, 100px);
+  transform: translate(1200px, 100px );
 }
 
 .stoltit {
+  margin-top: 62px;
   text-align: center;
   color: black;
 }
 
+
 .containerStylestolen {
   margin-top: 20px;
   margin-left: 25%;
-  border-radius: 5px;
-  background-color: rgba(242, 242, 242, 0.8);
+  border-radius: 15px;
+  background-color: rgba(13, 26, 52, 0.9);
   width: 50%;
   padding: 10px 40px;
+  padding-top: 15px;
+  padding-right: 10px;
+  color: #e8e8f0;
 }
 
 .labstol {
@@ -33,7 +39,8 @@
 .salstol,
 .salstol1,
 .salstol2,
-.salstol3 {
+.salstol3,
+.salstol4 {
   width: 60%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -44,7 +51,24 @@
 }
 
 .salstol {
-  transform: translateX(71px);
+  transform: translateX(72px);
+}
+
+.salstol1{
+  transform: translateX(134px);
+}
+
+.salstol2{
+  transform: translateX(99px);
+}
+
+.salstol3{
+  transform: translateX(113px);
+}
+
+.salstol4{
+  transform: translateX(93px);
+
 }
 
 .stol {
@@ -55,13 +79,13 @@
 .stol button {
   background-color: burlywood;
   border: none;
-  color: white;
+  color: #0D1A34D6;
   padding: 10px 24px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
+  margin: 4px 7px;
   cursor: pointer;
   border-radius: 4px;
 }

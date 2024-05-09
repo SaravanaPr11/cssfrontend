@@ -106,7 +106,7 @@ function StolenDebitCard() {
     navigate('/')
   }
 
-
+  const asteriskStyle = { color: 'red' }; 
 
   return (
     <div>
@@ -117,12 +117,12 @@ function StolenDebitCard() {
       <div className='containerStylestolen'>
         <form >
           <div>
-            <label htmlFor="namestol">Name:{custname}</label>
+            <label htmlFor="namestol">Name{custname}</label>
           
           </div>
           <div>
           <label className="labstol">
-          <span >*</span> Account Number:
+           Account Number <span style={asteriskStyle}>*</span>
           <select
             className='salstol'
             value={accountNumber}
@@ -141,7 +141,7 @@ function StolenDebitCard() {
           </div>
           
           <div>
-            <label className="labstol1" htmlFor="cardType">Card Type:</label>
+            <label className="labstol1" htmlFor="cardType">Card Type</label>
             <select
             className="salstol1"
               id="cardType"
@@ -157,7 +157,7 @@ function StolenDebitCard() {
             </select>
           </div>
           <div>
-            <label className="labstol2" htmlFor="lostStolenOn">Lost / Stolen on:</label>
+            <label className="labstol2" htmlFor="lostStolenOn">Lost / Stolen on</label>
             <input
             className="salstol2"
               type="date"
@@ -168,12 +168,11 @@ function StolenDebitCard() {
               onChange={handleDateChange}
             />
           </div>
-          <br/>
-          <label className='labstol3'>Card Number:</label>
+          <label className='labstol3'>Card Number</label>
           <input className='salstol3' type='Textarea' name='text' value={cardNumber} onChange={(e) => setcardNumber(e.target.value)} />
-<br/><br/>
-          <label className='labstol4'>RequestMessage:</label>
-          <input className='salstol3' type='Textarea' name='text' value={requestMessage} onChange={(e) => setrequestMessage(e.target.value)} />
+<br/>
+          <label className='labstol4'>RequestMessage</label>
+          <input className='salstol4' type='Textarea' name='text' value={requestMessage} onChange={(e) => setrequestMessage(e.target.value)} />
         </form>
         <div className="stol">
         <button type="submit" onClick={handlesubstolen}>Submit</button>

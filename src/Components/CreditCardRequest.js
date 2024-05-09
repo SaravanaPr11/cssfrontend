@@ -88,7 +88,7 @@ function CreditCardRequest() {
       
       <div className='containerStyle'>
         <form onSubmit={handleSubmit}>
-          <p className="namecredit">   Name:{custname }</p>
+          <p className="namecredit">Name:{custname }</p>
           <div>
           <label className="labcredit" htmlFor="cardType">Account Number:</label>
           <select

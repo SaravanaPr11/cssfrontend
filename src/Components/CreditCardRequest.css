@@ -1,8 +1,9 @@
 .cardlogout {
   background-color: burlywood;
+  color:  #0D1A34D6;
   border: none;
-  color: white;
   padding: 10px 24px;
+  border-radius: 10px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -13,6 +14,7 @@
 }
 
 .credittit {
+  margin-top: 60px;
   text-align: center;
   color: black;
 }
@@ -20,14 +22,19 @@
 .containerStyle {
   margin-top: 20px;
   margin-left: 25%;
-  border-radius: 5px;
-  background-color: rgba(242, 242, 242, 0.8);
+  border-radius: 15px;
+  background-color: rgba(13, 26, 52, 0.9);
+  color: #e8e8f0;
   width: 50%;
   padding: 10px 40px;
+  font-size: medium;
 }
 
 .namecredit {
+  margin-top: 10px;
+  color: #e4d9ba;
   font-weight: bold;
+  margin-bottom: 20px;
 }
 
 .labcredit {
@@ -41,7 +48,7 @@
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
-  transform: translateX(71px);
+  transform: translateX(84px);
 }
 
 .labcredit1 {
@@ -50,7 +57,7 @@
 
 .salcred1 {
   width: 60%;
-  transform: translateX(15px);
+  transform: translateX(128px);
   padding: 12px 20px;
   margin: 8px 0;
   border: 1px solid #ccc;
@@ -69,7 +76,7 @@
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
-  transform: translateX(84px);
+  transform: translateX(87px);
 }
 
 .credit {
@@ -78,16 +85,15 @@
 }
 
 .credit button {
-  background-color: rgb(13, 26, 52);
+  background-color: burlywood;
   /* Green */
   border: none;
-  color: white;
+  color: rgb(13, 26, 52);
   padding: 10px 24px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
+  margin: 4px 8px;
   cursor: pointer;
   border-radius: 4px;
 }

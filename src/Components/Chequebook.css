@@ -1,7 +1,8 @@
 .checklogout {
   background-color: burlywood;
   border: none;
-  color: white;
+  border-radius: 10px;
+  color:  #0D1A34D6;
   padding: 10px 24px;
   text-align: center;
   text-decoration: none;
@@ -21,14 +22,15 @@
 .containerStylecheque {
   margin-top: 20px;
   margin-left: 25% ;
-  border-radius: 5px;
-  background-color: rgb(242, 242, 242, 0.8);
+  border-radius: 15px;
+  background-color: rgba(13, 26, 52, 0.9);
   width: 50%;
   padding: 10px 40px ;
+  color: #e8e8f0;
 }
 
 .book1 {
-  color: rgb(13, 26, 52);
+  color: #e4d9ba;
 }
 
 .car {
@@ -43,7 +45,7 @@
   width: 60%;
   padding: 12px 20px;
   margin: 8px 0;
-  border: 1px solid #ccc;
+  border: 1px solid #ffffff;
   border-radius: 4px;
   box-sizing: border-box;
   transform: translateX(71px);
@@ -83,20 +85,20 @@
 }
 
 .button-56 {
-  background-color: rgb(13, 26, 52);;
+  background-color: burlywood;
   /* Green */
   border: none;
-  color: white;
+  color:  #0D1A34D6;
   padding: 10px 24px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
+  margin: 4px 10px;
   cursor: pointer;
   border-radius: 4px;
 }
 
 .button-56:hover {
-  background-color: #45a049;
+  background-color: rgb(238, 197, 148);
 }
