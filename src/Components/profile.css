@@ -43,8 +43,8 @@
 
 .profilinput {
   display: inline;
-  width: 63%;
-  border: 1px solid #fff;
+  width: 63%; /* Adjust width for padding */
+  border: 1px solid #fff; /* Add border */
   border-radius: 6px;
   padding: 3px;
   margin: 0;
@@ -55,8 +55,8 @@
   width: 12%;
   display: inline-block;
   align-items: center;
-  padding: 8px 0;
-  background-color: rgb(119, 209, 224);
+  padding: 8px 0; /* Add padding */
+  background-color: #1695ab;
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -68,7 +68,7 @@
 
 .btnprofil:hover,
 .btnn1profil:hover {
-  background-color: #1695ab;
+  background-color: rgb(119, 209, 224);
 }
 
 .profilelogout {

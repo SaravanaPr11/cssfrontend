@@ -1,4 +1,4 @@
-
+/* Header styles */
 .header {
     background-color:rgba(13, 26, 52, 0.841);
     padding: 0px;
@@ -10,9 +10,10 @@
     top: 0;
     left: 0;
     right: 0;
-    z-index: 100; 
+    z-index: 100; /* Adjust the z-index as needed */
   }
-
+  
+  /* Logo styles */
 
   .logo a {
     color: white; 

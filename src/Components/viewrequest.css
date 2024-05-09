@@ -1,7 +1,20 @@
+/* .T_Container{
+    display: flex;
+    box-shadow: 30px;
+   
+    width: 900px;
+    border-radius: 5px;
+    justify-content: center;
+    justify-items: center;
+    margin-top: 130px;
+    margin-left: 400px;
+  } */
   .T_header{
     text-align: center;
     justify-content: center;
     justify-items: center;
+    /* background-color: rgb(152, 155, 155);
+    box-shadow: 0px 0px 5px #d50c0c1a; */
     display: flex;
     flex-direction: column;
     align-items: center;
