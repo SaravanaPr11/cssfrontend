@@ -1,0 +1,106 @@
+/*CreditCardRequest*/
+ /* Style for the main container */
+ .containerStyle {
+  height: 500px;
+    width:40%;
+    margin-top:20px;
+    margin-left: 470px;
+    padding: -10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: rgb(158, 221, 204,.7);
+    text-align: center;
+  }
+  .namecredit{
+    margin-left: 180px;
+  font-size: 25px; 
+margin-top: 10px; }
+.credittit{
+  margin-top:-60px ;
+  margin-left: 600px;
+}
+  
+  /* Style for the form labels */
+  .labcredit {
+    display: block;
+  padding: 15px;
+    margin-top: 20px;
+    font-weight: bold;
+  }
+  .labcredit1 {
+    display: block;
+    padding: 15px;
+    margin-top: -50px;
+    font-weight: bold;
+  }
+
+  .salcred{
+    width: 75%;
+    padding: 1%;
+    height: 40px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 20px;
+
+  }
+  .salcred1{
+    width: 75%;
+    padding: 1%;
+    height: 40px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 20px;
+  }
+  
+  /* Style for buttons */
+  .credit button {
+    display: inline-block;
+    padding: 15px 25px;
+    background-color: #f0ee75; /* Blue color for buttons */
+    color: rgb(14, 12, 12);
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-right: 40px;
+    margin-top:40px;
+  }
+
+  
+  /* Style for buttons on hover */
+  .credit button:hover {
+    background-color: #eabba0; /* Darker blue on hover */
+  }
+  
+  /* Style for the "Data Submitted" section */
+  .credit p {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  /* Style for the back and submit buttons */
+  .credit .back-button {
+    background-color: #ccc; /* Light gray color for the back button */
+    color: #333;
+  }
+  
+  .credit .back-button:hover {
+    background-color: #e59d9d; /* Slightly darker gray on hover */
+  }
+  .textreqmsg{
+    height: 35px;
+    font-size: 20px;
+
+
+  }
+  .cardlogout{
+ 
+    margin-left: 1350px;
+   margin-top: 150px;
+   background-color: burlywood;
+   
+  }

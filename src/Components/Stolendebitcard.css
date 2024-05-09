@@ -1,0 +1,122 @@
+
+/*StolenDebitCard*/
+/* Style for the main container */
+.containerStylestolen {
+    height: 490px;
+    width:40%;
+    margin-top:15px;
+    margin-left: 470px;
+    padding: -10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: rgb(227, 197, 206,.7);
+    text-align: center;
+  }    
+    
+  .namestol{
+    font-size: 28px;
+    top: -20px;
+    
+      padding: 2em;
+      margin-left:600px;
+}
+.stoltit{
+  margin-top:-60px ;
+  margin-left: 450px;
+}
+.labstol {
+    display: block;
+  padding: 15px;
+    margin-top: 15px;
+    font-weight: bold;
+  }
+  .labstol1 {
+    display: block;
+    padding: 15px;
+    margin-top: -25px;
+    font-weight: bold;
+  }
+
+  .salstol{
+    width: 75%;
+    padding: 1%;
+    height: 40px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 20px;
+
+  }
+  .salstol1{
+    width: 75%;
+    padding: 1%;
+    height: 40px;
+    margin-bottom: 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 20px;
+  }
+    
+  .stol button {
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: #f0ee75; /* Blue color for buttons */
+    color: rgb(14, 12, 12);
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-right: 40px;
+    margin-top:20px;
+  }
+
+  
+  /* Style for buttons on hover */
+  .stol button:hover {
+    background-color: #eabba0; /* Darker blue on hover */
+  }
+  
+  /* Style for the "Data Submitted" section */
+  .stol p {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  /* Style for the back and submit buttons */
+  .stol .back-button {
+    background-color: #da9f9f; /* Light gray color for the back button */
+    color: #d35fa2;
+  }
+  
+  .stol .back-button:hover {
+    background-color: #4edee1; /* Slightly darker gray on hover */
+  }
+    
+    /* Style for input/select fields
+    input[type="text"],
+    select,
+    input[type="date"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    } */
+    
+    /* Style for buttons */
+    
+    /* Style for the "Data Submitted" section */
+    /* div[data-submitted] {
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: green; 
+    } */
+    .stolenlogout{
+      margin-left: 1400px;
+      background-color: burlywood;
+      margin-top: 150px;
+    }
