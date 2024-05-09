@@ -1,0 +1,97 @@
+/* CreditCardRequest.css */
+
+.cardlogout {
+  background-color: #4caf50;
+  /* Green */
+  border: none;
+  color: white;
+  padding: 10px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.credittit {
+  text-align: center;
+  color: #4caf50;
+}
+
+.containerStyle {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.namecredit {
+  font-weight: bold;
+}
+
+.labcredit {
+  font-weight: bold;
+}
+
+.salcred {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.labcredit1 {
+  font-weight: bold;
+}
+
+.salcred1 {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.mesgreq {
+  font-weight: bold;
+}
+
+.textreqmsg {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.credit {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.credit button {
+  background-color: #4caf50;
+  /* Green */
+  border: none;
+  color: white;
+  padding: 10px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.credit button:hover {
+  background-color: #45a049;
+}
+
