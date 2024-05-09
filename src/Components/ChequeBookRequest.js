@@ -95,7 +95,7 @@ const handlelogout=()=>{
       <form className='car' >
         <div>
         <label className='chequelab'>
-          <span style={asteriskStyle}>*</span> Account Number:
+          Account Number <span style={asteriskStyle}>*</span>
           <select
             className='salcheque'
             value={accountNumber}
@@ -110,10 +110,10 @@ const handlelogout=()=>{
             ))}
           </select>
         </label></div>
-        <br /><br /><br />
+        <br />
         <div>
         <label className='chequelab1'>
-          <span style={asteriskStyle}>*</span> Number of cheque leaves:  
+          Number of cheque leaves <span style={asteriskStyle}>* </span>
         </label>
         <select
         className='sal1cheque'
@@ -129,10 +129,10 @@ const handlelogout=()=>{
               ))}
             </select>
             </div><br/>
-            <label className='request'>RequestMessage:</label>
-            <div>         <input className='textreqcheque' type='Textarea' name='text' value={requestMessage} onChange={(e) => setrequestMessage(e.target.value)} />
+            <div>
+            <label className='request'>RequestMessage </label>
+            <input className='textreqcheque' type='Textarea' name='text' value={requestMessage} onChange={(e) => setrequestMessage(e.target.value)} />
             </div>
- 
         
         
         <div className='sub'>

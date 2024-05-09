@@ -1,8 +1,5 @@
-/* Stolendebitcard.css */
-
 .stolenlogout {
-  background-color: #4caf50;
-  /* Green */
+  background-color: burlywood;
   border: none;
   color: white;
   padding: 10px 24px;
@@ -10,69 +7,34 @@
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
+  margin: auto;
   cursor: pointer;
+  transform: translate(1200px, 100px);
 }
 
 .stoltit {
   text-align: center;
-  color: #4caf50;
+  color: black;
 }
 
 .containerStylestolen {
+  margin-top: 20px;
+  margin-left: 25%;
   border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
+  background-color: rgba(242, 242, 242, 0.8);
+  width: 50%;
+  padding: 10px 40px;
 }
 
 .labstol {
   font-weight: bold;
 }
 
-.salstol {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-.labstol1 {
-  font-weight: bold;
-}
-
-.salstol1 {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-.labstol2 {
-  font-weight: bold;
-}
-
-.salstol2 {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-.labstol3 {
-  font-weight: bold;
-}
-
+.salstol,
+.salstol1,
+.salstol2,
 .salstol3 {
-  width: 100%;
+  width: 60%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
@@ -81,8 +43,8 @@
   box-sizing: border-box;
 }
 
-.labstol4 {
-  font-weight: bold;
+.salstol {
+  transform: translateX(71px);
 }
 
 .stol {
@@ -91,8 +53,7 @@
 }
 
 .stol button {
-  background-color: #4caf50;
-  /* Green */
+  background-color: burlywood;
   border: none;
   color: white;
   padding: 10px 24px;
@@ -106,6 +67,5 @@
 }
 
 .stol button:hover {
-  background-color: #45a049;
+  background-color: #cfcfcf;
 }
-
