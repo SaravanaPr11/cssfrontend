@@ -1,4 +1,3 @@
-/* Styling for the my-account-container section */
 .my-account-container {
   text-align: center;
   margin-top: 0;
@@ -10,7 +9,7 @@
   margin-left: 140px;
 }
 
-/* Styling for the my-Accounts header */
+
 .my-Accounts {
   display: flex;
   justify-content: center;
@@ -25,7 +24,7 @@
 
 }
 
-/* Styling for the account name */
+
 .accountname {
   font-size: 20px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -34,26 +33,26 @@
   color: white;
 }
 
-/* Styling for the table data */
+
 .tdclass {
   background-color: azure;
 }
 
-/* Styling for the table */
+
 .tableaccount {
   border-collapse: collapse;
   margin-top: 20px;
   width: 100%;
 }
 
-/* Styling for the table headers and cells */
+
 table, th, td {
   border: 1px solid black;
   height: 80px;
   padding: 10px 30px;
 }
 
-/* Styling for the back button */
+
 .back-button1 {
   display: inline-block;
   margin: 0 auto;
@@ -70,14 +69,13 @@ table, th, td {
   margin-top: 30px;
 }
 
-/* Styling for the table header */
+
 .titaccount {
   border: 2px solid black;
   background-color: aquamarine;
   border-inline: 2px;
 }
 
-/* Styling for the logout button */
 .btnlogout2 {
   position: absolute;
   top: 88px;

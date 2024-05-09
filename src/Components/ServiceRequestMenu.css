@@ -4,8 +4,8 @@
   align-items: center;
   justify-content: center;
   font-size: 20px;
-  height: 65    vh;
-  width: 60%;
+  height: 64vh;
+  width: 54%;
   margin-top: 30px;
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
   padding: 20px;
@@ -24,7 +24,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: 100% ;
 }
 
 /* Styling for the header */
@@ -46,17 +46,19 @@
 
 /* Styling for the buttons */
 .tag {
+  transform: translateY(-20px);
   background-color: #fff;
   color: rgb(13, 26, 52);
   padding: 10px 30px;
   border: none;
   cursor: pointer;
-  margin-bottom: 10px; /* Adjusted margin bottom */
+  margin-bottom: 10px; 
   border-radius: 20px;
   transition: background-color 0.3s ease;
   width: 100%;
   text-align: left;
   font-size: 16px;
+  margin-top: 5px;
 }
 
 .tag i{
@@ -77,6 +79,7 @@
   margin-bottom: 10px; /* Adjusted margin bottom */
   border-radius: 5px;
   transition: background-color 0.3s ease; 
+  transform: translate(600px, -15px);
 }
 
 /* Styling for the back button */
@@ -89,11 +92,12 @@
   width: 100px; /* Adjusted width */
   border-radius: 5px;
   transition: background-color 0.3s ease; 
+  transform: translateY(-35px);
 }
 
 /* Hover effect for buttons */
 .tag:hover,
 .menulogout:hover,
 .Backbutton:hover {
-  background-color: #cfcfcf; /* Lighter shade for hover */
+  background-color: #cfcfcf; 
 }
