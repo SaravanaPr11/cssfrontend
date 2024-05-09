@@ -85,11 +85,13 @@ const handlelogout=()=>{
     
     <div>
       <button className='checklogout' type="button" onClick={handlelogout}>Logout</button>
+      
+      <div className='containerStylecheque'>
+
       <h1 className='book'>
         Cheque Book Request
       </h1>
       
-      <div className='containerStylecheque'>
       <h2 className='book1'>Name: {custname}</h2>
        
       <form className='car' >
@@ -110,7 +112,6 @@ const handlelogout=()=>{
             ))}
           </select>
         </label></div>
-        <br />
         <div>
         <label className='chequelab1'>
           Number of cheque leaves <span style={asteriskStyle}>* </span>
@@ -128,9 +129,9 @@ const handlelogout=()=>{
                 </option>
               ))}
             </select>
-            </div><br/>
+            </div>
             <div>
-            <label className='request'>RequestMessage </label>
+            <label className='request'>Request Message </label>
             <input className='textreqcheque' type='Textarea' name='text' value={requestMessage} onChange={(e) => setrequestMessage(e.target.value)} />
             </div>
         

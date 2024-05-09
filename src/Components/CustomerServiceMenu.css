@@ -81,7 +81,7 @@
   .buttoncus,
 .btnlogout {
   padding: 10px;
-  margin: 5px;
+  margin: 5px 6px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -112,7 +112,7 @@
   }
 
 .icon-button i {
-    font-size: 31px;
+    font-size: 32px;
     padding: 10px;
     text-align: center;
 }

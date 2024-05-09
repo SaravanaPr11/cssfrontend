@@ -84,13 +84,13 @@ function CreditCardRequest() {
   return (
     <div>
       <button className='cardlogout' type="button" onClick={handlelogout}>Logout</button>
-      <h1 className="credittit">Card Request</h1>
       
       <div className='containerStyle'>
+      <h1 className="credittit">Card Request</h1>
         <form onSubmit={handleSubmit}>
-          <p className="namecredit">Name:{custname }</p>
+          <p className="namecredit">Name {custname }</p>
           <div>
-          <label className="labcredit" htmlFor="cardType">Account Number:</label>
+          <label className="labcredit" htmlFor="cardType">Account Number</label>
           <select
             className='salcred'
             value={accountNumber}
@@ -104,9 +104,9 @@ function CreditCardRequest() {
               </option>
             ))}
             </select>
-          </div><br></br><br></br>
+          </div>
           <div>
-            <label  className="labcredit1" htmlFor="cardType">Card Type:</label>
+            <label  className="labcredit1" htmlFor="cardType">Card Type</label>
             <select className="salcred1"
               id="cardType"
               value={cardType}
@@ -119,8 +119,8 @@ function CreditCardRequest() {
                 </option>
               ))}
             </select>
-          </div><br></br><br></br>
-          <label className='mesgreq'>RequestMessage:</label>
+          </div>
+          <label className='mesgreq'>Request Message</label>
           <input className='textreqmsg' type='Textarea' name='text' value={requestMessage} onChange={(e) => setrequestMessage(e.target.value)} />
           
         </form>

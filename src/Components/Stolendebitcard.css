@@ -1,34 +1,35 @@
 .stolenlogout {
   background-color: burlywood;
+  color: #150101;
+  padding: 10px 20px;
   border: none;
-  border-radius: 10px;
-  color:  #0D1A34D6;
-  padding: 10px 24px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: auto;
   cursor: pointer;
-  transform: translate(1200px, 100px );
+  margin-bottom: 10px; /* Adjusted margin bottom */
+  border-radius: 5px;
+  transition: background-color 0.3s ease; 
+  transform: translate(1240px, 95px );
 }
 
 .stoltit {
-  margin-top: 62px;
   text-align: center;
-  color: black;
+  margin-top: 10px;
+  font-size: 23px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #e4d9ba;
+  margin-bottom: 10px;
 }
 
 
+
 .containerStylestolen {
-  margin-top: 20px;
-  margin-left: 25%;
-  border-radius: 15px;
+  font-size: 18px;
+  margin-top: 60px;
+  margin-left: 23.5%;
+  border-radius: 20px;
   background-color: rgba(13, 26, 52, 0.9);
-  width: 50%;
+  width: 54%;
   padding: 10px 40px;
   padding-top: 15px;
-  padding-right: 10px;
   color: #e8e8f0;
 }
 
@@ -41,8 +42,9 @@
 .salstol2,
 .salstol3,
 .salstol4 {
+  font-size: 16px;
   width: 60%;
-  padding: 12px 20px;
+  padding: 10px 20px;
   margin: 8px 0;
   display: inline-block;
   border: 1px solid #ccc;
@@ -51,19 +53,20 @@
 }
 
 .salstol {
+  margin-top: 15px;
   transform: translateX(72px);
 }
 
 .salstol1{
-  transform: translateX(134px);
+  transform: translateX(143px);
 }
 
 .salstol2{
-  transform: translateX(99px);
+  transform: translateX(104px);
 }
 
 .salstol3{
-  transform: translateX(113px);
+  transform: translateX(120px);
 }
 
 .salstol4{
@@ -73,10 +76,11 @@
 
 .stol {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 15px;
 }
 
 .stol button {
+  transform: translateY(-10px);
   background-color: burlywood;
   border: none;
   color: #0D1A34D6;
@@ -92,4 +96,8 @@
 
 .stol button:hover {
   background-color: #cfcfcf;
+}
+
+.namestol{
+  font-size: 20px;
 }

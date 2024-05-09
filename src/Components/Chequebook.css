@@ -1,36 +1,38 @@
 .checklogout {
   background-color: burlywood;
+  color: #150101;
+  padding: 10px 20px;
   border: none;
-  border-radius: 10px;
-  color:  #0D1A34D6;
-  padding: 10px 24px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: auto;
   cursor: pointer;
-  transform: translate(1200px, 100px );
+  margin-bottom: 10px; /* Adjusted margin bottom */
+  border-radius: 5px;
+  transition: background-color 0.3s ease; 
+  transform: translate(1240px, 95px );
 }
 
 .book {
-  margin-top: 60px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 23px;
   text-align: center;
-  color: black;
+  color: #e4d9ba;
 }
 
 .containerStylecheque {
-  margin-top: 20px;
-  margin-left: 25% ;
-  border-radius: 15px;
+  font-size: 18px;
+  margin-top: 105px;
+  margin-left: 25.3% ;
+  border-radius: 20px;
   background-color: rgba(13, 26, 52, 0.9);
   width: 50%;
-  padding: 10px 40px ;
+  padding: 20px 40px ;
   color: #e8e8f0;
+  height: 60vh;
 }
 
 .book1 {
-  color: #e4d9ba;
+  margin-top: 20px;
+  font-size: 19px;
+  color: white;
 }
 
 .car {
@@ -42,13 +44,14 @@
 }
 
 .salcheque {
+  font-size: 16px;
   width: 60%;
-  padding: 12px 20px;
+  padding: 10px 20px;
   margin: 8px 0;
   border: 1px solid #ffffff;
   border-radius: 4px;
   box-sizing: border-box;
-  transform: translateX(71px);
+  transform: translateX(79px);
 }
 
 .chequelab1 {
@@ -56,9 +59,10 @@
 }
 
 .sal1cheque {
+  font-size: 16px;
   width: 60%;
   transform: translateX(15px);
-  padding: 12px 20px;
+  padding: 10px 20px;
   margin: 8px 0;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -70,13 +74,14 @@
 }
 
 .textreqcheque {
+  font-size: 16px;
   width: 60%;
-  padding: 12px 20px;
+  padding: 10px 20px;
   margin: 8px 0;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
-  transform: translateX(84px);
+  transform: translateX(89px);
 }
 
 .sub {

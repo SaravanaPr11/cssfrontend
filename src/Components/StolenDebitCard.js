@@ -111,13 +111,12 @@ function StolenDebitCard() {
   return (
     <div>
        <button className='stolenlogout' type="button" onClick={handlelogout}>Logout</button>
-       
-      <h1 className="stoltit">Lost / Stolen Card Request</h1>
      
       <div className='containerStylestolen'>
+      <h1 className="stoltit">Lost / Stolen Card Request</h1>
         <form >
           <div>
-            <label htmlFor="namestol">Name{custname}</label>
+            <label className="namestol">Name{custname}</label>
           
           </div>
           <div>
@@ -171,7 +170,7 @@ function StolenDebitCard() {
           <label className='labstol3'>Card Number</label>
           <input className='salstol3' type='Textarea' name='text' value={cardNumber} onChange={(e) => setcardNumber(e.target.value)} />
 <br/>
-          <label className='labstol4'>RequestMessage</label>
+          <label className='labstol4'>Request Message</label>
           <input className='salstol4' type='Textarea' name='text' value={requestMessage} onChange={(e) => setrequestMessage(e.target.value)} />
         </form>
         <div className="stol">

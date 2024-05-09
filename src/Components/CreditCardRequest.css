@@ -1,40 +1,40 @@
 .cardlogout {
   background-color: burlywood;
-  color:  #0D1A34D6;
+  color: #150101;
+  padding: 10px 20px;
   border: none;
-  padding: 10px 24px;
-  border-radius: 10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: auto;
   cursor: pointer;
-  transform: translate(1200px, 100px);
+  margin-bottom: 10px; /* Adjusted margin bottom */
+  border-radius: 5px;
+  transition: background-color 0.3s ease; 
+  transform: translate(1240px, 95px );
 }
 
 .credittit {
-  margin-top: 60px;
   text-align: center;
-  color: black;
+  color: #e4d9ba;
+  font-size: 23px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .containerStyle {
-  margin-top: 20px;
-  margin-left: 25%;
-  border-radius: 15px;
+  height: 65vh;
+  margin-top: 80px;
+  margin-left: 23%;
+  border-radius: 20px;
   background-color: rgba(13, 26, 52, 0.9);
   color: #e8e8f0;
-  width: 50%;
-  padding: 10px 40px;
-  font-size: medium;
+  width: 54%;
+  padding: 20px 40px;
+  font-size: 18px
 }
 
 .namecredit {
-  margin-top: 10px;
+  font-size: 20px;
+  margin-top: 20px;
   color: #e4d9ba;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 .labcredit {
@@ -42,13 +42,14 @@
 }
 
 .salcred {
+  font-size: 16px;
   width: 60%;
-  padding: 12px 20px;
+  padding: 10px 20px;
   margin: 8px 0;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
-  transform: translateX(84px);
+  transform: translateX(77px);
 }
 
 .labcredit1 {
@@ -56,9 +57,10 @@
 }
 
 .salcred1 {
+  font-size: 16px;
   width: 60%;
   transform: translateX(128px);
-  padding: 12px 20px;
+  padding: 10px 20px;
   margin: 8px 0;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -70,13 +72,14 @@
 }
 
 .textreqmsg {
+  font-size: 16px;
   width: 60%;
-  padding: 12px 20px;
+  padding: 10px 20px;
   margin: 8px 0;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
-  transform: translateX(87px);
+  transform: translateX(79px);
 }
 
 .credit {
@@ -99,5 +102,5 @@
 }
 
 .credit button:hover {
-  background-color: #45a049;
+  background-color: rgb(238, 197, 148);
 }
