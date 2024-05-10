@@ -31,7 +31,7 @@ function CreditCardRequest() {
 
   const getAccountNumbers1 = async () => {
     try {
-      const response = await api.get(`/fetchaccountnumber/${customerId}`); // Use the correct API endpoint
+      const response = await api.get(`/getlistofAccountbyCustomerId/${customerId}`); // Use the correct API endpoint
       setAccountData1(response.data);
       console.log('Account Numbers:', response.data);
     } catch (error) {

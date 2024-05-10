@@ -83,10 +83,10 @@ const AccountStatement = () => {
                     {currentItems.map((accno, index) => (
                         <tr className="tablerow" key={index}>
                             <td>{formatedate(accno.date)}</td>
-                            <td>{accno.Description}</td>
+                            <td>{accno.description}</td>
                             <td>{accno.creditamount}</td>
                             <td>{accno.Debitamount}</td>
-                            <td>{accno.ChequeNo}</td>
+                            <td>{accno.chequeNo}</td>
                             <td>{accno.closingBalance}</td>
                         </tr>
                     ))}

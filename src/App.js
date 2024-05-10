@@ -24,7 +24,7 @@ function App() {
           <Route exact path='/' element={<LoginForm />} />
           <Route exact path='/CustomerServiceMenu' element={<CustomerServiceMenu />} />
           <Route exact path='/MyAccount' element={<MyAccount />} />
-          <Route exact path='/AccountStatement' element={<AccountStatement />} />
+          <Route exact path='/AccountStatement/:accountNumber' element={<AccountStatement />} />
           <Route exact path='/ServiceRequestMenu' element={<ServiceRequestMenu />} />
           <Route exact path='/ChequeBookRequest' element={<ChequeBookRequest />} />
           <Route exact path='/StolenDebitCard' element={<StolenDebitCard />} />

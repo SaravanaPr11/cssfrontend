@@ -52,7 +52,7 @@ function StolenDebitCard() {
 
   const getAccountNumbers2= async () => {
     try {
-      const response = await api.get(`/accnumberfetch/${customerId}`); // Use the correct API endpoint
+      const response = await api.get(`/getlistofAccountbyCustomerId/${customerId}`); // Use the correct API endpoint
       setAccountData2(response.data);
       console.log('Account Numbers:', response.data);
     } catch (error) {

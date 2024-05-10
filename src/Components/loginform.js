@@ -32,46 +32,40 @@ function LoginForm({ OnLogin }) {
 
 
   const handleSubmit = async () => {
-
-    if (userName && password) {
-      const loginResponse = await api.post('/validatelogin', {
+    if (!userName || !password) {
+      if (!userName) {
+        setUserNameError("Please enter a valid username");
+      }
+      if (!password) {
+        setpasswordError("Please enter a valid password");
+      }
+      return;
+    }
+  
+    try {
+      const loginResponse = await api.post('/validateUser', {
         userName,
         password,
       });
-      console.log('api Response:', loginResponse);
-
-      if (loginResponse.data.messgae === "Login Successfull") {
-        console.log("Login Successful", loginResponse.data.customerId)
-        alert("Login successfull");
-
+      console.log('API Response:', loginResponse);
+  
+      if (loginResponse.data.Message === "Login Successful") {
+        console.log("Login Successful", loginResponse.data.customerId);
+        alert("Login successful");
+  
         localStorage.setItem('cid', loginResponse.data.customerId);
-
-        localStorage.setItem('name', loginResponse.data.name)
-
+        localStorage.setItem('name', loginResponse.data.name);
+  
         navigate('/CustomerServiceMenu');
-      }
-      else {
+      } else {
         alert("Login Failed....Please enter valid username and password");
       }
-
-
+    } catch (error) {
+      console.error("Error:", error);
+      alert("An error occurred. Please try again later.");
     }
-
-
-    if (userName === '') {
-      setUserNameError("please enter the valid username")
-    }
-    if (password === '') {
-      setpasswordError("please enter a valid password");
-    }
-    if (userName === '' && password === '') {
-      setUserNameError("please enter the valid username")
-      setpasswordError("please enter a valid password");
-
-    }
-
-  }
-
+  };
+    
   const handleClear = () => {
     setUsername('');
     setPassword('');

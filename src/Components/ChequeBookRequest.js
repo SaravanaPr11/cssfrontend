@@ -28,7 +28,7 @@ const ChequeBookRequest = () => {
 
   const getAccountNumbers = async () => {
     try {
-      const response = await api.get(`/fetchaccnumber/${customerId}`); // Use the correct API endpoint
+      const response = await api.get(`/getlistofAccountbyCustomerId/${customerId}`); // Use the correct API endpoint
       setAccountData(response.data);
       console.log('Account Numbers:', response);
     } catch (error) {

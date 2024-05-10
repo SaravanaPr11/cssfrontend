@@ -82,7 +82,7 @@ const handleAccountStatement=(accountNumber)=>{
                 <td>{cd.accountType}</td>
                 <td>{cd.accountBalance}</td>
                 <td>{cd.branchName}</td>
-                <td>{cd.Ifsccode}</td>
+                <td>{cd.ifscCode}</td>
               </tr>
             ))}
           </tbody>

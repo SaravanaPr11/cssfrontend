@@ -76,27 +76,26 @@ const Profile = () => {
   const handlelogout= () => {
     navigate('/');
   }
+
   const getprofile = async (customerId) => {
-     await api.get(`getdetails/${customerId}`)
+    await api.get(`getdetails/${customerId}`)
       .then(response => {
         console.log('display all customer details', response.data);
         setname(response.data.Name)
-        setDob(response.data.dob)
-        setCity(response.data.city)
-        setDoorstreet(response.data.door_street)
+        setDob(response.data.Dob)
+        setCity(response.data.City)
+        setDoorstreet(response.data.DoorStreet)
         setEmail(response.data.Email)
-        setPhoneno(response.data.phoneNo)
-        setPincode(response.data.pincode)
-        setState(response.data.state)
-        setPanno(response.data.panNo)
-
-
+        setPhoneno(response.data.PhoneNo)
+        setPincode(response.data.Pincode)
+        setState(response.data.State)
+        setPanno(response.data.PanNo)
       })
       .catch(error => {
-        console.log("something problem", error);
+        console.log("Something went wrong", error);
       })
   }
-
+  
 
 
 const profileupdate = async () => {
@@ -157,19 +156,19 @@ if(door_street && pincode && city && state){
     
     <div className='f1'>
   <label className='lab'>Name</label>
-  <input className='profilinput' type='text' name='name' value={Name} onChange={(e) => setname(e.target.value)} />
+  <input className='profilinput' type='text' name='name' value={Name} onChange={(e) => setname(e.target.value)} readOnly />
   
   <label className='lab'>DOB</label>
-  <input className='profilinput' type='text' name='date' value={dob} onChange={(e) => setDob(e.target.value)} />
+  <input className='profilinput' type='text' name='date' value={dob} onChange={(e) => setDob(e.target.value)} readOnly />
   
   <label className='lab'>Phone Number</label>
   <input className='profilinput' type='text' name='phone' value={phoneNo} onChange={(e) => setPhoneno(e.target.value)} />
   
   <label className='lab'>Pan No</label>
-  <input className='profilinput' type='text' name='panno' value={panNo} onChange={(e) => setPanno(e.target.value)} />  
+  <input className='profilinput' type='text' name='panno' value={panNo} onChange={(e) => setPanno(e.target.value)} readOnly/>  
   
   <label className='lab'>Email</label>
-  <input className='profilinput' type="text" value={Email} onChange={(e) => setEmail(e.target.value)} />
+  <input className='profilinput' type="text" value={Email} onChange={(e) => setEmail(e.target.value)} readOnly/>
   
     <label className='lab'>Door & Street<span style={{ color: 'red' }}>*</span></label>
     <input style={{ backgroundColor:"#edd1bc" }} className='profilinput'  type='text' name='street' value={door_street} onChange={handledoorstreet} />
