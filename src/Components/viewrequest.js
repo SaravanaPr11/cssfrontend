@@ -32,7 +32,7 @@ const RequestStatus = () => {
 
   const getAccountNumbers = async () => {
     try {
-      const response = await api.get(`/accnumbers/${customerId}`); // Use the correct API endpoint
+      const response = await api.get(`/fetchAcc/${customerId}`); // Use the correct API endpoint
       setAccountData1(response.data);
       console.log('Account Numbers:', response);
     } catch (error) {
@@ -40,8 +40,6 @@ const RequestStatus = () => {
     }
   };
  
-
-
   useEffect(() => {
 
     var obj = {
@@ -52,7 +50,7 @@ const RequestStatus = () => {
     if (requestType) {
          if(requestType === "0"){
             try {
-              api.post('/getbyseviceid', obj).then((res)=>{
+              api.post('/getbyserviceid', obj).then((res)=>{
                console.log("loststolen response", res?.data);
      
                setResponseData(res?.data)
@@ -67,7 +65,7 @@ const RequestStatus = () => {
 
        else if (requestType === "1") {
         try {
-         api.post('/getbyseviceid', obj).then((res)=>{
+         api.post('/getbyserviceid', obj).then((res)=>{
           console.log("checkbook response", res?.data);
 
           setResponseData(res?.data)
@@ -81,7 +79,7 @@ const RequestStatus = () => {
 
       }else if(requestType === "2"){
         try {
-          api.post('/getbyseviceid', obj).then((res)=>{
+          api.post('/getbyserviceid', obj).then((res)=>{
            console.log("creditdebit response", res?.data);
  
            setResponseData(res?.data)
@@ -94,7 +92,7 @@ const RequestStatus = () => {
          }
       }else if(requestType === "3"){
         try {
-          api.post('/getbyseviceid', obj).then((res)=>{
+          api.post('/getbyserviceid', obj).then((res)=>{
            console.log("loststolen response", res?.data);
  
            setResponseData(res?.data)
@@ -158,18 +156,18 @@ const formatedate=(date)=>{
           <div>
           <label className="viewlab" htmlFor="cardType">Account Number:
           <select
-            className='salview'
-            value={accountNumber}
-            onChange={(e) => setAccountNumber(e.target.value)}
-            required
-          >
-            <option value=''>Select</option>
-            {accountData1.map((item) => (
-              <option key={item.customerId} value={item.accountnumber}>
-                {item.accountnumber}
-              </option>
-            ))}
-            </select>
+  className='salview'
+  value={accountNumber}
+  onChange={(e) => setAccountNumber(e.target.value)}
+  required
+>
+  <option key="default" value=''>Select</option>
+  {accountData1.map((item) => (
+    <option key={item.accountnumber} value={item.accountnumber}>
+      {item.accountnumber}
+    </option>
+  ))}
+</select>
             </label>
             <br/><br/>
             <label> Request Type:  </label>

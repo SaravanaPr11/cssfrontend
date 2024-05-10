@@ -52,14 +52,14 @@ function CreditCardRequest() {
       serviceRequestId:2,
       accountNumber:accountNumber,
       requestMessage:requestMessage,
-      cardtype:cardType
+      cardType:cardType
     }
     // console.log("123456789"+serviceRequestId);
     console.log("ujghjgf", saveObj1);
     try {
       if(cardType && accountNumber && requestMessage){
 
-     await api.post('/savecarrequest', saveObj1)
+     await api.post('/savecardrequest', saveObj1)
         .then(response => {
           console.log("Data saved", response.data);
           alert(" Request Data save successfully")

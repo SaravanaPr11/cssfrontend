@@ -118,7 +118,7 @@ else if(pincode === ''){
 
 
     var updateObj = {
-      customerId: customerId,
+      id: customerId,
       name: Name,
       pincode: pincode,
       city: city,
@@ -134,7 +134,7 @@ else if(pincode === ''){
     
 
 if(door_street && pincode && city && state){
-     await api.post(`updatecustomer`, updateObj)
+     await api.post(`/update`, updateObj)
         .then(response => {
           console.log("Data saved", response.data);
           alert("Data updated successfully")
