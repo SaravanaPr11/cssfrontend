@@ -44,32 +44,28 @@ const handlelogout=()=>{
   navigate('/');
 }
 
-  const saveChequeData= async () => {
-    var saveObj = {
-      serviceRequestId:1,
-      accountNumber:accountNumber,
-      requestMessage:requestMessage,
-      noOfChequeLeaves:noOfChequeLeaves
-    }
-    // console.log("123456789"+serviceRequestId);
-    console.log("ujghjgf", saveObj);
-    try {
-      if(noOfChequeLeaves && accountNumber && requestMessage){
+const saveChequeData = async () => {
+  const saveObj = {
+    serviceRequestId: 1,
+    accountNumber: accountNumber,
+    requestMessage: requestMessage,
+    noOfChequeLeaves: noOfChequeLeaves
+  };
 
-     await api.post('/postcardrequest', saveObj)
-        .then(response => {
-          console.log("Data saved", response.data);
-          alert("Request Data save successfully")
-        })
-    } 
-    else{
-      alert("Please fill the mandatory field");
+  try {
+    if (noOfChequeLeaves && accountNumber && requestMessage) {
+      const response = await api.post('/postcardRequest', saveObj);
+      console.log("Data saved", response.data);
+      alert("Request Data saved successfully");
+    } else {
+      alert("Please fill in the mandatory fields");
     }
+  } catch (error) {
+    console.error("Error saving data:", error);
+    alert("Failed to save request data");
   }
-    catch (error) {
-      console.log("sorry data not save", error);
-    }
-  }
+};
+
 //for clear the page after submit the data
   const handlesubcheque=async()=>{
     await saveChequeData();
@@ -115,7 +111,6 @@ const handlelogout=()=>{
         <div>
         <label className='chequelab1'>
           Number of cheque leaves <span style={asteriskStyle}>* </span>
-        </label>
         <select
         className='sal1cheque'
               id="noofcheck"
@@ -129,10 +124,12 @@ const handlelogout=()=>{
                 </option>
               ))}
             </select>
+            </label>
             </div>
             <div>
-            <label className='request'>Request Message </label>
+            <label className='request'>Request Message 
             <input className='textreqcheque' type='Textarea' name='text' value={requestMessage} onChange={(e) => setrequestMessage(e.target.value)} />
+            </label>
             </div>
         
         
