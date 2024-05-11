@@ -40,12 +40,11 @@ body{
 
 
 .cover {
-    border: 0.5px solid #dad5cf;
-    width: 25em;
+    width: 27em;
     background-color:rgba(13, 26, 52, 0.9);
     position:fixed;
     border-radius: 0.7em;
-    box-shadow: 0.0.188em 1.550em rgb(33, 55, 100);
+    box-shadow:  0em 0.3em 0.3em rgba(14, 23, 48, 0.3);
     display:flex;
     flex-direction: column;
     margin-left: 30px;
@@ -57,45 +56,45 @@ body{
 
 }
 
-.input-with-icon:focus{
-    outline-color: blue;
+.inputlabelnam:focus, .inputlabelpas:focus{
+    outline-style: solid;
+    outline-width: 2px;
+    outline-color: blueviolet;
+
 }
 .sp1{
     margin-bottom: -25px;
     margin-right: 75px;
 }
 .btnlogin{
+    border: 1px solid rgba(222, 184, 135, 1);
     font-size: 15px;
     width: 40%;
     height: 2.5em;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: 0.15s;
-    border-radius: 0.3em ease;
+    transition: 0.05s;
+    border-radius: 0.3em;
     cursor: pointer;
-    background-color: rgba(228, 217, 186, 1.0); 
+    background-color: rgba(222, 184, 135, 1);    
     margin-top: 20px;
     color:rgb(13, 26, 52);
-    border: 2px solid rgb(13, 26, 52);
-   
-    
-    
 }
 .btn1login{
+    border: 1px solid rgba(222, 184, 135, 1);
     font-size: 15px;
     width: 40%;
     height: 2.5em;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: 0.15s;
-    border-radius: 0.3em ease;
+    transition: 0.05s;
+    border-radius: 0.3em;
     cursor: pointer;
-    background-color: rgba(228, 217, 186, 1.0);    
+    background-color: rgba(222, 184, 135, 1);    
     margin-top: 20px;
     color:rgb(13, 26, 52);
-    border: 2px solid rgb(13, 26, 52);
     margin-left: -40px;
 }
 .btnlogin:hover{
@@ -131,7 +130,7 @@ body{
     text-align: left;
     font-size:larger;
     justify-items: center;
-    margin-left: 30px;
+    margin-left: 1.75em;
     margin-top: 6px;
     
 }
@@ -144,7 +143,7 @@ body{
     text-align: left;
     font-size:larger;
     justify-items: center;
-    margin-left: 30px;
+    margin-left: 1.75em;
     margin-top: 6px;
 }
 

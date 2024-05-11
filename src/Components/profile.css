@@ -59,7 +59,7 @@
   display: inline-block;
   align-items: center;
   padding: 8px 0; /* Add padding */
-  background-color: #1695ab;
+  background-color: rgb(104, 202, 219);
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -71,7 +71,7 @@
 
 .btnprofil:hover,
 .btnn1profil:hover {
-  background-color: rgb(119, 209, 224);
+  background-color: #1695ab;
 }
 
 .profilelogout {

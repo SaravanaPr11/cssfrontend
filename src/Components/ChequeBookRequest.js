@@ -47,7 +47,7 @@ const handlelogout=()=>{
 const saveChequeData = async () => {
   const saveObj = {
     serviceRequestId: 1,
-    accountNumber: accountNumber,
+    accountNumber: Number(accountNumber), // Convert accountNumber to number
     requestMessage: requestMessage,
     noOfChequeLeaves: noOfChequeLeaves
   };
@@ -55,8 +55,14 @@ const saveChequeData = async () => {
   try {
     if (noOfChequeLeaves && accountNumber && requestMessage) {
       const response = await api.post('/postcardRequest', saveObj);
-      console.log("Data saved", response.data);
-      alert("Request Data saved successfully");
+      console.log("Response:", response); // Log the response
+      if (response.data && response.data.status === "success") {
+        console.log("Data saved successfully");
+        alert("Request Data saved successfully");
+      } else {
+        console.error("Failed to save data:", response.data);
+        alert("Failed to save request data");
+      }
     } else {
       alert("Please fill in the mandatory fields");
     }

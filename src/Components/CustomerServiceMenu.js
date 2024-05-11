@@ -34,10 +34,10 @@ function CustomerServiceMenu() {
 
   return (
     <div className="container">
-  <div className="cust_ser">
-    <div className="Wel">
-      <h1>Welcome:{custname}</h1>
+      <div className="Wel">
+      <h1>Welcome {custname}</h1>
     </div>
+  <div className="cust_ser">
     <div className="Customer">
       <h1 className="t1">Customer Service Menu</h1>
     </div>
