@@ -58,8 +58,8 @@ body{
 
 .inputlabelnam:focus, .inputlabelpas:focus{
     outline-style: solid;
-    outline-width: 2px;
-    outline-color: blueviolet;
+    outline-width: 3px;
+    outline-color: #1695ab;
 
 }
 .sp1{

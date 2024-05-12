@@ -59,8 +59,8 @@ const AccountStatement = () => {
 
     return (
         <div className="accbody">
+          <button  className="statelogout" type="button" onClick={handlelogout}>Logout</button>
         <div className="account-statement">
-        <button  className="statelogout" type="button" onClick={handlelogout}>Logout</button>
             <div className="background"> 
             <h2>Account Statement</h2>
             </div>

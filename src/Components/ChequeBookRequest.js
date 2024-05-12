@@ -87,7 +87,6 @@ const saveChequeData = async () => {
     
     <div>
       <button className='checklogout' type="button" onClick={handlelogout}>Logout</button>
-      
       <div className='containerStylecheque'>
 
       <h1 className='book'>

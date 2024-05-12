@@ -7,7 +7,7 @@
   height: 64vh;
   width: 54%;
   margin-top: 30px;
-  box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
+  box-shadow:  0em 0.3em 0.3em rgba(14, 23, 48, 0.3);
   padding: 20px;
   background-color: rgba(13, 26, 52, 0.9);
   text-align: center;
@@ -71,15 +71,17 @@
 
 /* Styling for the logout button */
 .menulogout {
+  display: flex;
+  position: relative;
   background-color: burlywood;
   color: #150101;
   padding: 10px 20px;
   border: none;
   cursor: pointer;
-  margin-bottom: 10px; /* Adjusted margin bottom */
   border-radius: 5px;
-  transition: background-color 0.3s ease; 
-  transform: translate(600px, -15px);
+  transition: background-color 0.3s ease;
+  margin: auto;
+  transform: translate(40em, -1.6em);
 }
 
 /* Styling for the back button */

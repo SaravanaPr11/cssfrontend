@@ -45,7 +45,7 @@ function CustomerServiceMenu() {
     <div className="Customer1">
   <button className="icon-button" onClick={profilepage}>
     <i className="fa-solid fa-user"></i>
-    <span>My Profile</span>
+    <span className="icontext">My Profile</span>
   </button>
   <button className="icon-button" onClick={MyAccount}>
     <i className="fa-solid fa-file-invoice"></i>

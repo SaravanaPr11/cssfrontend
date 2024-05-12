@@ -146,6 +146,7 @@ const formatedate=(date)=>{
  
 
   return (
+    <div className='body'>
     <div className="T_Container">
       <button className='viewlogout' type="button" onClick={handlelogout}>Logout</button>
         <div className="T_title"><h1><center>View Request Status</center></h1></div>
@@ -172,6 +173,7 @@ const formatedate=(date)=>{
             <br/><br/>
             <label> Request Type:  </label>
             <select
+              className='reqType'
               name="requestType"
               value={requestType}
               onChange={handleChangeRequestType}  
@@ -182,7 +184,7 @@ const formatedate=(date)=>{
               <option value="3">Lost/Stolen Card</option>
 
             </select>
-          </div><br></br><br></br>
+          </div><br></br>
         <div >
           <table className="Table">
             <thead>
@@ -233,6 +235,7 @@ const formatedate=(date)=>{
             </button>
           </div>
        </div>
+    </div>
     </div>
   );
 };

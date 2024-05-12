@@ -46,12 +46,12 @@ const handleAccountStatement=(accountNumber)=>{
   return (
     <div className="centered-container">
       <button  className="btnlogout2" type="button" onClick={handlelogout}>Logout</button>
+      <h4 className="accountname">Welcome {custname}</h4>
       <div className="my-account-container">
         <div className="my-Accounts">
           <p>
             My Accounts
           </p>  </div>
-          <h4 className="accountname">Welcome:{custname}</h4>
       
         <table className="tableaccount">
           <thead >

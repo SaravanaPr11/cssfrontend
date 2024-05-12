@@ -1,109 +1,133 @@
-/* .T_Container{
-    display: flex;
-    box-shadow: 30px;
-   
-    width: 900px;
-    border-radius: 5px;
-    justify-content: center;
-    justify-items: center;
-    margin-top: 130px;
-    margin-left: 400px;
-  } */
-  .T_header{
-    text-align: center;
-    justify-content: center;
-    justify-items: center;
-    /* background-color: rgb(152, 155, 155);
-    box-shadow: 0px 0px 5px #d50c0c1a; */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    width: 80%;
-    margin-left: 140px;
-  }
-  .T_border{
-    padding: 20px;
-    font-weight: bold;
-    margin-left: 10px;
-  }
-  .book123{
-    margin-top: -25px;
-    margin-left:-170px;
-    font-size: 23px;
-  }
+/* Container for the entire component */
+.body
+{
+  display: flex;
+  justify-content: center;
+}
+.T_Container {
+  background-color: rgba(13, 26, 52, 0.8);
+  display: block;
+  padding: 10px;
+  width: 85%;
+  border-radius: 20px;
+  position: relative;
+  margin-top: 45%;
+  height: 75vh;
+  padding-top: 0px;
+  padding-bottom: 0;
+}
 
-  .Table{
-    border-collapse: collapse;
-     margin-top: -10px;
-   
+/* Logout button */
+.viewlogout {
+  margin-left: 82.8%;
+  background-color: burlywood;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transform: translateY(16.8vh);
+}
 
-  }
-  table,th,td{
-    border: 1px solid black;
-   
-    height: 50px;
-    padding: 10px 50px;
-    
+/* Title of the component */
+.T_title {
+  text-align: center;
+  font-size: 18px;
+  color: #e4d9ba;
+  font-weight: bold;
+}
 
-  }
-  .viewlogout{
-      transform: translate(1200px, 100px);
-      top: 100px;
-      right: 20px;
-      padding: 8px 16px;
-      background-color: burlywood;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-  }
-  
-  .T_Submit{
-    justify-content: center;
-    justify-items: center;
-    display: flex;
-  }
-  .salview{
-    font-size: 18px;
-    width: 20%;
+/* Name display */
+.book123 {  
+  margin-left: 20px;
+  color: #CCCCCC;
+  font-family: Calibri;
+  font-size: 20px;
 }
-  .salview label{
-    font-size: 18px;
-  }
 
-.viewtab{
-    border: 2px solid black;
-    background-color:lightblue;
-    border-inline: 2px;
+/* Border around the form */
+.T_border {
+  border: 1px solid black;
+  padding: 5px;
+  margin-top: 12px;
+  margin-bottom: 20px;
 }
-.T_SubmitController{
-    margin-left: 50px;
-    display:inline-block;
-    margin-top: 10px;
-    justify-content: center;
-    color: #d71864;
-    font-size: larger;
-    padding: 20px;
-   border-radius: 10px;
-   border-width: 0;
-   box-shadow: rgba(25, 25, 25, 0.04) 0 0 1px 0, rgba(0, 0, 0, 0.1) 0 3px 4px 0;
-   cursor: pointer;
- 
- 
+
+/* Select dropdown for account number */
+.salview {
+  width: 30%;
+  padding: 3px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-left: 19px;
 }
-.viewlab{
-    width: 140%;
+
+.reqType {
+  width: 30%;
+  padding: 3px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-left: 40px;
 }
-.T_title{
-    margin-bottom: 20px;
-    margin-top: 68px;
-    font-size: 15px;
-    color: #e4d9ba;
+
+/* Table for displaying request status */
+.Table {
+  border-collapse: collapse;
+  width: 100%;
 }
-.viewclass{
-    background-color: azure;
+
+/* Table elements */
+table,
+th,
+td,
+tr {
+  border: 1px solid black;
+  height: 40px;
+  padding: auto 20px;
 }
-.Pagination{
-margin-top: -65px;
-margin-left: 1000px; 
+
+/* Table header */
+.viewtab {
+  border: 2px solid black;
+  background-color: rgb(160, 211, 141);
+}
+
+/* Table row */
+.viewclass {
+  background-color: azure;
+}
+
+/* Pagination container */
+.Pagination {
+  position: absolute;
+  display: flex;
+  justify-content: left;
+  font-size: 15px;
+}
+
+/* Page number display */
+.PageNumber {
+  color: white;
+  background-color: black;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-family: calibri;
+}
+
+/* Next and Previous buttons */
+.NextButton,.PrevButton {
+  width: 65px;
+  cursor: pointer;
+}
+
+/* Submit button */
+.T_Submit {
+  background-color: burlywood;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 20px;
 }
