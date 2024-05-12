@@ -112,7 +112,7 @@ const RequestStatus = () => {
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = responseData.slice(indexOfFirstItem, indexOfLastItem);
+  const currentItems = Array.isArray(responseData) ? responseData.slice(indexOfFirstItem, indexOfLastItem) : [];
 
   
   const nextPage = () => {
@@ -146,7 +146,7 @@ const formatedate=(date)=>{
  
 
   return (
-    <div className='body'>
+    <div className="srcont">
     <div className="T_Container">
       <button className='viewlogout' type="button" onClick={handlelogout}>Logout</button>
         <div className="T_title"><h1><center>View Request Status</center></h1></div>
@@ -217,17 +217,17 @@ const formatedate=(date)=>{
         <div className="T_SubmitController">
           <button className="T_Submit" onClick={Backoffice}><span>Back</span></button></div>
         </div>
-        <div className="Pagination">
+        <div className="PagiNation">
             <button
-              className="PrevButton"
+              className="Prevbutton"
               onClick={prevPage}
               disabled={currentPage === 1}
             >
               Previous
             </button>
-            <span className="PageNumber">{currentPage}</span>
+            <span className="Pagenumber">{currentPage}</span>
             <button
-              className="NextButton"
+              className="Nextbutton"
               onClick={nextPage}
               disabled={currentItems.length < itemsPerPage}
             >

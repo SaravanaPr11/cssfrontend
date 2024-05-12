@@ -1,5 +1,5 @@
 /* Container for the entire component */
-.body
+.srcont
 {
   display: flex;
   justify-content: center;
@@ -7,38 +7,35 @@
 .T_Container {
   background-color: rgba(13, 26, 52, 0.8);
   display: block;
-  padding: 10px;
+  padding: 20px;
   width: 85%;
+  height: 55vh;
   border-radius: 20px;
   position: relative;
-  margin-top: 45%;
-  height: 75vh;
-  padding-top: 0px;
-  padding-bottom: 0;
+  top: 25vh;
 }
 
 /* Logout button */
 .viewlogout {
-  margin-left: 82.8%;
-  background-color: burlywood;
-  padding: 8px 16px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transform: translateY(16.8vh);
+right: 10%;
+top: 30%;
+position: absolute;
+padding: 6px;
+border: none;
+border-radius: 8px;
+background-color: burlywood;
 }
 
-/* Title of the component */
 .T_title {
   text-align: center;
   font-size: 18px;
   color: #e4d9ba;
-  font-weight: bold;
 }
 
 /* Name display */
 .book123 {  
-  margin-left: 20px;
+  margin-left: 7px;
+  padding-bottom: 2px;
   color: #CCCCCC;
   font-family: Calibri;
   font-size: 20px;
@@ -46,7 +43,6 @@
 
 /* Border around the form */
 .T_border {
-  border: 1px solid black;
   padding: 5px;
   margin-top: 12px;
   margin-bottom: 20px;
@@ -89,7 +85,7 @@ tr {
 
 /* Table header */
 .viewtab {
-  border: 2px solid black;
+  border: 2px solid black;  
   background-color: rgb(160, 211, 141);
 }
 
@@ -99,15 +95,15 @@ tr {
 }
 
 /* Pagination container */
-.Pagination {
-  position: absolute;
+.PagiNation {
+  position: relative;
   display: flex;
   justify-content: left;
   font-size: 15px;
 }
 
 /* Page number display */
-.PageNumber {
+.Pagenumber {
   color: white;
   background-color: black;
   padding: 5px;
@@ -117,7 +113,7 @@ tr {
 }
 
 /* Next and Previous buttons */
-.NextButton,.PrevButton {
+.Nextbutton,.Prevbutton {
   width: 65px;
   cursor: pointer;
 }
@@ -130,4 +126,9 @@ tr {
   border-radius: 8px;
   cursor: pointer;
   margin-top: 20px;
+}
+
+.Nextbutton, .Prevbutton, .Pagenumber{
+  position: relative;
+  transform: translate(900px, 50px);
 }
