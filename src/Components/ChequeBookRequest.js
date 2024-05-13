@@ -85,7 +85,8 @@ const ChequeBookRequest = () => {
       <button className='checklogout' type="button" onClick={handleLogout}>Logout</button>
       <div className='containerStylecheque'>
         <h1 className='book'>Cheque Book Request</h1>
-        <h2 className='book1'>Name: {custname}</h2>
+        <label className='namlab1'>Name</label>
+        <input className='namecheque1' type='text' value={custname} readOnly />
         <form className='car'>
           <div>
             <label className='chequelab'>

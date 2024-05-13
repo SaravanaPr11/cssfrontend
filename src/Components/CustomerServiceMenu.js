@@ -35,7 +35,7 @@ function CustomerServiceMenu() {
   return (
     <div className="container">
       <div className="Wel">
-      <h1>Welcome {custname}</h1>
+      <h1>Welcome: {custname}</h1>
     </div>
   <div className="cust_ser">
     <div className="Customer">
@@ -53,7 +53,7 @@ function CustomerServiceMenu() {
   </button>
   <button className="icon-button" onClick={ServiceRequestMenu}>
     <i className="fa-solid fa-square-plus"></i>
-    <span>Make A Service Request</span>
+    <span>Make a Service Request</span>
   </button>
   <button className="icon-button" onClick={viewpage}>
     <i className="fa-solid fa-person-circle-question"></i>

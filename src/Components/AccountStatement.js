@@ -72,8 +72,7 @@ const AccountStatement = () => {
                     <tr className="titstat">
                         <th>TransactionDate</th>
                         <th>Description</th>
-                        <th>Credit Amount</th>
-                        <th>Debit Amount</th>
+                        <th>Credit/Debit</th>
                         <th>Cheque/Ref No</th>
                         <th>Closing Balance</th>
                     </tr>
@@ -84,8 +83,7 @@ const AccountStatement = () => {
                         <tr className="tablerow" key={index}>
                             <td>{formatedate(accno.date)}</td>
                             <td>{accno.description}</td>
-                            <td>{accno.creditamount}</td>
-                            <td>{accno.Debitamount}</td>
+                            <td>{accno.creditOrDebitAmount}</td>
                             <td>{accno.chequeNo}</td>
                             <td>{accno.closingBalance}</td>
                         </tr>

@@ -91,7 +91,9 @@ function StolenDebitCard() {
         <h1 className="stoltit">Lost / Stolen Card Request</h1>
         <form>
           <div>
-            <label className="namestol">Name: {custname}</label>
+            <label className='namlab1'>Name</label>
+        <input className='namecheque2' type='text' value={custname} readOnly />
+
           </div>
           <div>
             <label className="labstol">
@@ -113,7 +115,7 @@ function StolenDebitCard() {
           </div>
           <div>
             <label className="labstol1" htmlFor="cardType">
-              Card Type
+              Card Type <span style={asteriskStyle}>*</span>
             </label>
             <select
               className="salstol1"
@@ -131,7 +133,7 @@ function StolenDebitCard() {
           </div>
           <div>
             <label className="labstol2" htmlFor="lostStolenOn">
-              Lost / Stolen on
+              Lost / Stolen on <span style={asteriskStyle}>*</span>
             </label>
             <input
               className="salstol2"

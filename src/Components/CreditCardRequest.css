@@ -17,6 +17,7 @@
   color: #e4d9ba;
   font-size: 23px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding-bottom: 20px;
 }
 
 .containerStyle {
@@ -32,12 +33,20 @@
 }
 
 .namecredit {
-  font-size: 20px;
-  margin-top: 20px;
-  color: #e4d9ba;
-  font-weight: bold;
-  margin-bottom: 25px;
+  font-size: 16px;
+  width: 60%;
+  padding: 10px 20px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  transform: translateX(164px);
 }
+
+.namlab{
+  color: #ccc;
+  font-weight: bold;
+  }
 
 .labcredit {
   font-weight: bold;

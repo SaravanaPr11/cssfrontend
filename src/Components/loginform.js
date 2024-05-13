@@ -57,9 +57,14 @@ function LoginForm({ OnLogin }) {
         localStorage.setItem('name', loginResponse.data.name);
   
         navigate('/CustomerServiceMenu');
+      } if (loginResponse.data.Message === "Invalid UserName") {
+        alert("Login Failed....Invalid username");
+      } else if (loginResponse.data.Message === "Invalid Password") {
+        alert("Login Failed....Invalid password");
       } else {
         alert("Login Failed....Please enter valid username and password");
       }
+      
     } catch (error) {
       console.error("Error:", error);
       alert("An error occurred. Please try again later.");

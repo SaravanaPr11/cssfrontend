@@ -36,11 +36,11 @@ const ServiceRequestMenu = () => {
           <br />
           <button className="tag" onClick={checkhandle}>
             <i className="fa-solid fa-money-check"></i>
-            <span>Request a new Cheque book</span>
+            <span>Request a new Cheque Book</span>
           </button>
           <button className="tag" onClick={cardhandle}>
             <i className="fa-solid fa-credit-card"></i>
-            <span>Request a new credit or debit Card</span>
+            <span>Request a new Credit or Debit Card</span>
           </button>
           <button className="tag" onClick={stolenhandle}>
             <i className="fa-solid fa-person-circle-exclamation"></i>
