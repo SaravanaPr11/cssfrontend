@@ -9,10 +9,10 @@
   display: block;
   padding: 20px;
   width: 85%;
-  height: 55vh;
+  height: 60vh;
   border-radius: 20px;
   position: relative;
-  top: 25vh;
+  top: 15vh;
 }
 
 /* Logout button */
@@ -50,7 +50,7 @@ background-color: burlywood;
 
 /* Select dropdown for account number */
 .salview {
-  width: 30%;
+  width: 20%;
   padding: 3px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
@@ -59,7 +59,7 @@ background-color: burlywood;
 }
 
 .reqType {
-  width: 30%;
+  width: 20%;
   padding: 3px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
@@ -82,6 +82,7 @@ tr {
   height: 40px;
   padding: auto 20px;
 }
+
 
 /* Table header */
 .viewtab {
@@ -131,4 +132,16 @@ tr {
 .Nextbutton, .Prevbutton, .Pagenumber{
   position: relative;
   transform: translate(900px, 50px);
+}
+
+.viewlab{
+  color: white;
+}
+
+.reqtlab{
+  color: white;
+}
+
+.reqlab12{
+  color: white;
 }

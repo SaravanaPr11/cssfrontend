@@ -1,148 +1,122 @@
-import React, { useState ,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "./api/Api";
 import "./Stolendebitcard.css";
 
-
 function StolenDebitCard() {
   const navigate = useNavigate();
-  
-  
-  const [stolenDate, setStolenDate] = useState("");
-  
   const customerId = localStorage.getItem("cid");
-  const[requestMessage,setrequestMessage]=useState(' ')
-  const [accountNumber, setAccountNumber] = useState([]);
-  const [accountData2, setAccountData2] = useState([]); // State for storing account numbers
-  const custname = localStorage.getItem('name');
-  const[cardType,setCardType]=useState(' ');
-  const[cardNumber,setcardNumber]=useState('');
-  const cardTypes = ["Debit", "Credit", "master"];
-  
-   // Replace with your account numbers
-   
-
-  // Calculate the minimum and maximum allowed dates
-  const currentDate = new Date();
-  const maxDate = new Date(currentDate); // Today's date
-  maxDate.setDate(maxDate.getDate() - 1); // Subtract 1 day to disallow future dates
-  const minDate = new Date(currentDate); // Today's date
-  minDate.setDate(minDate.getDate() - 7); // Subtract 7 days to allow dates up to 1 week ago
-
-  // Convert the minimum and maximum dates to strings in the "YYYY-MM-DD" format
-  const minDateString = minDate.toISOString().split('T')[0];
-  const maxDateString = maxDate.toISOString().split('T')[0];
-
-  const handleDateChange = (event) => {
-    const selected = event.target.value;
-
-    // Check if the selected date is within the allowed date range
-    if (selected >= minDateString && selected <= maxDateString) {
-      setStolenDate(selected);
-    } else {
-      alert('You can only select dates from today up to 1 week ago.');
-    }
-  };
-
- 
+  const [accountData2, setAccountData2] = useState([]);
+  const [stolenDate, setStolenDate] = useState("");
+  const [accountNumber, setAccountNumber] = useState("");
+  const [requestMessage, setRequestMessage] = useState("");
+  const [cardType, setCardType] = useState("");
+  const [cardNumber, setCardNumber] = useState("");
+  const custname = localStorage.getItem("name");
+  const cardTypes = ["Debit", "Credit", "Master"];
 
   useEffect(() => {
-    getAccountNumbers2(); // Fetch account numbers when the component mounts
+    getAccountNumbers2();
   }, []);
 
-  const getAccountNumbers2= async () => {
+  const getAccountNumbers2 = async () => {
     try {
-      const response = await api.get(`/getlistofAccountbyCustomerId/${customerId}`); // Use the correct API endpoint
+      const response = await api.get(`/getlistofAccountbyCustomerId/${customerId}`);
       setAccountData2(response.data);
-      console.log('Account Numbers:', response.data);
+      console.log("Account Numbers:", response.data);
     } catch (error) {
-      console.error('Error fetching account numbers:', error);
+      console.error("Error fetching account numbers:", error);
     }
   };
 
   const handleBack = () => {
-    navigate('/ServiceRequestMenu');
+    navigate("/ServiceRequestMenu");
   };
 
-  const savestolenData= async () => {
-    var saveObj3 = {
-      "stolenDate":stolenDate,
-      "serviceRequestId":3,
-      "accountNumber":accountNumber,
-      "requestMessage":requestMessage,
-      "cardType":cardType,
-      "cardNumber":cardNumber
-    }
-    // console.log("123456789"+serviceRequestId);
-    console.log("ujghjgf", saveObj3);
+  const handleLogout = () => {
+    navigate("/");
+  };
+
+  const saveStolenData = async () => {
     try {
-      if( accountNumber  && cardType  && stolenDate && cardNumber && requestMessage){
-
-     await api.post('/savelost', saveObj3)
-        .then(response => {
+      // Construct the request payload
+      const saveObj3 = {
+        accountNumber: Number(accountNumber),
+        requestMessage: requestMessage,
+        losttolenDate: stolenDate, // Ensure the date format matches the API's expected format
+        cardNumber: cardNumber, // Assuming cardNumber is a number
+        cardType: cardType
+      };
+  
+      // Check if all mandatory fields are filled
+      if (accountNumber && cardType && stolenDate && cardNumber && requestMessage) {
+        // Make the POST request to the API endpoint
+        const response = await api.post('/savelost', saveObj3);
+  
+        // Check if the request was successful
+        if (response.status === 200) {
           console.log("Data saved", response.data);
-          alert("Request Data save successfully")
-        })
-    } 
-    else{
-      alert("Please fill the mandatory field");
+          alert("Request Data saved successfully");
+        } else {
+          console.error("Failed to save data:", response.statusText);
+          alert("Failed to save request data");
+        }
+      } else {
+        alert("Please fill the mandatory fields");
+      }
+    } catch (error) {
+      console.error("Sorry, data not saved", error);
+      alert("Failed to save request data");
     }
-  }
-    catch (error) {
-      console.log("sorry data not save", error);
-    }
-  }
+  };
+      
+  const handleSubmitStolen = async () => {
+    await saveStolenData();
+    // Reset form fields after submission
+    setStolenDate("");
+    setAccountNumber("");
+    setRequestMessage("");
+    setCardType("");
+    setCardNumber("");
+  };
 
-  const handlesubstolen=async()=>{
-    await savestolenData();
-    setStolenDate('');
-    setAccountNumber('');
-    setrequestMessage('');
-    setCardType('');
-    setcardNumber('');
-
-  }
-  const handlelogout=()=>{
-    navigate('/')
-  }
-
-  const asteriskStyle = { color: 'red' }; 
+  const asteriskStyle = { color: "red" };
 
   return (
     <div>
-       <button className='stolenlogout' type="button" onClick={handlelogout}>Logout</button>
-     
-      <div className='containerStylestolen'>
-      <h1 className="stoltit">Lost / Stolen Card Request</h1>
-        <form >
+      <button className="stolenlogout" type="button" onClick={handleLogout}>
+        Logout
+      </button>
+      <div className="containerStylestolen">
+        <h1 className="stoltit">Lost / Stolen Card Request</h1>
+        <form>
           <div>
-            <label className="namestol">Name{custname}</label>
-          
+            <label className="namestol">Name: {custname}</label>
           </div>
           <div>
-          <label className="labstol">
-           Account Number <span style={asteriskStyle}>*</span>
-          <select
-            className='salstol'
-            value={accountNumber}
-            onChange={(e) => setAccountNumber(e.target.value)}
-            required
-          >
-            <option value=''>Select</option>
-            {accountData2.map((item) => (
-              <option key={item.customerId} value={item.customerId}>
-                {item.accountnumber}
-              </option>
-            ))}
-          </select>
-        </label>
-            
+            <label className="labstol">
+              Account Number <span style={asteriskStyle}>*</span>
+              <select
+                className="salstol"
+                value={accountNumber}
+                onChange={(e) => setAccountNumber(e.target.value)}
+                required
+              >
+                <option value="">Select</option>
+                {accountData2.map((item) => (
+                  <option key={item.customerId} value={item.accountNumber}>
+                    {item.accountnumber}
+                  </option>
+                ))}
+              </select>
+            </label>
           </div>
-          
           <div>
-            <label className="labstol1" htmlFor="cardType">Card Type</label>
+            <label className="labstol1" htmlFor="cardType">
+              Card Type
+            </label>
             <select
-            className="salstol1"
+              className="salstol1"
               id="cardType"
               value={cardType}
               onChange={(e) => setCardType(e.target.value)}
@@ -156,28 +130,41 @@ function StolenDebitCard() {
             </select>
           </div>
           <div>
-            <label className="labstol2" htmlFor="lostStolenOn">Lost / Stolen on</label>
+            <label className="labstol2" htmlFor="lostStolenOn">
+              Lost / Stolen on
+            </label>
             <input
-            className="salstol2"
+              className="salstol2"
               type="date"
               id="lostStolenOn"
               value={stolenDate}
-              max={maxDateString}
-              min={minDateString}
-              onChange={handleDateChange}
+              onChange={(e) => setStolenDate(e.target.value)}
             />
           </div>
-          <label className='labstol3'>Card Number</label>
-          <input className='salstol3' type='Textarea' name='text' value={cardNumber} onChange={(e) => setcardNumber(e.target.value)} />
-<br/>
-          <label className='labstol4'>Request Message</label>
-          <input className='salstol4' type='Textarea' name='text' value={requestMessage} onChange={(e) => setrequestMessage(e.target.value)} />
+          <label className="labstol3">Card Number</label>
+          <input
+            className="salstol3"
+            type="text"
+            name="text"
+            value={cardNumber}
+            onChange={(e) => setCardNumber(e.target.value)}
+          />
+          <br />
+          <label className="labstol4">Request Message</label>
+          <input
+            className="salstol4"
+            type="text"
+            name="text"
+            value={requestMessage}
+            onChange={(e) => setRequestMessage(e.target.value)}
+          />
         </form>
         <div className="stol">
-        <button type="submit" onClick={handlesubstolen}>Submit</button>
-        <button onClick={handleBack}>Back</button>
+          <button type="submit" onClick={handleSubmitStolen}>
+            Submit
+          </button>
+          <button onClick={handleBack}>Back</button>
         </div>
-          
       </div>
     </div>
   );

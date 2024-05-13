@@ -170,8 +170,7 @@ const formatedate=(date)=>{
   ))}
 </select>
             </label>
-            <br/><br/>
-            <label> Request Type:  </label>
+            <label className='reqlab12'> Request Type:  
             <select
               className='reqType'
               name="requestType"
@@ -184,36 +183,36 @@ const formatedate=(date)=>{
               <option value="3">Lost/Stolen Card</option>
 
             </select>
-          </div><br></br>
-        <div >
-          <table className="Table">
-            <thead>
-              <tr className='viewtab'>
-              <th>S.No</th>
-                <th className='reqdate'>RequestDate</th>
-                <th>ResponseStatus </th>
-                <th className='res'>ResponseMessage</th>
-                <th>ServiceId</th>
-                <th>ResponseDate</th>
-              </tr>
-            </thead>
-            <tbody>
-              {
-                currentItems?.map((cd, index) => (
-                  <tr className='viewclass'>
-                    <th scope="row">{index + 1}</th>
-                    <td> {formatedate(cd.requestdate)}</td>
-                    {/* <td>{<a href="#" onClick={navigateToAccountDetails(cd.accountnumber)}>cd.accountnumber</a>}</td> */}
-                    <td>{cd.responsestatus}</td>
-                   <td>{cd.responseMessage}</td>
-                   <td>{cd.serviceid}</td> 
-                   <td>{cd.responseDate ? formatedate(cd.responseDate) : '-'}</td> {/*ternari operator*/}
-                  </tr>
-                ))
-              }
-            </tbody>
-          </table>
-        </div>
+            </label>
+          </div><br/>
+          <div>
+  <table className="Table">
+    <thead>
+      <tr className='viewtab'>
+        <th>S.No</th>
+        <th className='reqdate'>RequestDate</th>
+        <th>ResponseStatus</th>
+        <th className='res'>ResponseMessage</th>
+        <th>ServiceId</th>
+        <th>ResponseDate</th>
+      </tr>
+    </thead>
+    <tbody>
+    {["LostorStolen", "CHequeBook", "CreditorDebitCard"].map((type) => (
+  responseData[type] && responseData[type].map((request, index) => (
+    <tr key={index}>
+      <td>{index + 1}</td>
+      <td>{formatedate(request.requestdate)}</td>
+      <td>{request.responsestatus}</td>
+      <td>{request.responseMessage}</td>
+      <td>{request.serviceid}</td>
+      <td>{request.responseDate ? formatedate(request.responseDate) : '-'}</td>
+    </tr>
+  ))
+))}
+    </tbody>
+  </table>
+</div>
         <div className="T_SubmitController">
           <button className="T_Submit" onClick={Backoffice}><span>Back</span></button></div>
         </div>

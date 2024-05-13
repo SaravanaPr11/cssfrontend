@@ -96,3 +96,7 @@ table, th, td {
   border-radius: 8px;
   cursor: pointer;
 }
+
+.account-link{
+  background-color: white;
+}

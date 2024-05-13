@@ -162,7 +162,7 @@ if(door_street && pincode && city && state){
   <input className='profilinput' type='text' name='date' value={dob} onChange={(e) => setDob(e.target.value)} readOnly />
   
   <label className='lab'>Phone Number</label>
-  <input className='profilinput' type='text' name='phone' value={phoneNo} onChange={(e) => setPhoneno(e.target.value)} />
+  <input className='profilinput' type='text' name='phone' value={phoneNo} onChange={(e) => setPhoneno(e.target.value)} readOnly />
   
   <label className='lab'>Pan No</label>
   <input className='profilinput' type='text' name='panno' value={panNo} onChange={(e) => setPanno(e.target.value)} readOnly/>  

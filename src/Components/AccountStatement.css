@@ -91,8 +91,6 @@ tr {
 .Pagination {
   position: absolute;
   display: flex;
-  justify-content: left;
-  transform: translateY(40vh);
   font-size: 15px;
 }
 
@@ -112,4 +110,7 @@ tr {
 
 .PrevButton{
   cursor: pointer;
+}
+.PrevButton, .NextButton, .PageNumber{
+ transform: translate(1100px, 175px);
 }
