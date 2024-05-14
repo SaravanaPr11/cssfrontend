@@ -3,6 +3,7 @@
 {
   display: flex;
   justify-content: center;
+
 }
 .T_Container {
   text-align: center;
@@ -10,7 +11,7 @@
   display: block;
   padding: 20px;
   width: 85%;
-  height: 60vh;
+  height: 90vh;
   border-radius: 20px;
   position: relative;
   top: 15vh;
@@ -28,9 +29,13 @@ background-color: burlywood;
 }
 
 .T_title {
-  text-align: center;
   font-size: 18px;
   color: #e4d9ba;
+}
+
+
+.viewstrow{
+  background-color: white;
 }
 
 /* Name display */
@@ -93,7 +98,7 @@ tr {
 
 /* Table row */
 .viewclass {
-  background-color: azure;
+  background-color: white;
 }
 
 /* Pagination container */
@@ -132,7 +137,7 @@ tr {
 
 .Nextbutton, .Prevbutton, .Pagenumber{
   position: relative;
-  transform: translate(900px, 50px);
+  transform: translate(900px, -40px);
 }
 
 .viewlab{

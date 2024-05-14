@@ -41,89 +41,70 @@ const RequestStatus = () => {
   };
  
   useEffect(() => {
-
-    var obj = {
-        service_request_id: +requestType,
-        accountNumber:+accountNumber
-    }
-
     if (requestType) {
-         if(requestType === "0"){
-            try {
-              api.post('/getbyserviceid', obj).then((res)=>{
-               console.log("loststolen response", res?.data);
-     
-               setResponseData(res?.data)
-     
-              })
-               
-             }
-             catch (error) {
-               console.log("Error", error);
-             }
-          }
+        var obj = {
+            service_request_id: +requestType,
+            accountNumber: +accountNumber
+        };
 
-       else if (requestType === "1") {
         try {
-         api.post('/getbyserviceid', obj).then((res)=>{
-          console.log("checkbook response", res?.data);
-
-          setResponseData(res?.data)
-
-         })
-          
+            api.post('/getbyserviceid', obj)
+               .then((res) => {
+                   console.log("Response data:", res?.data);
+                   // Filter the response data based on the selected request type
+                   const filteredData = filterData(res?.data, requestType);
+                   setResponseData(filteredData);
+               })
+               .catch((error) => {
+                   console.log("Error:", error);
+               });
+        } catch (error) {
+            console.log("Error:", error);
         }
-        catch (error) {
-          console.log("Error", error);
-        }
-
-      }else if(requestType === "2"){
-        try {
-          api.post('/getbyserviceid', obj).then((res)=>{
-           console.log("creditdebit response", res?.data);
- 
-           setResponseData(res?.data)
- 
-          })
-           
-         }
-         catch (error) {
-           console.log("Error", error);
-         }
-      }else if(requestType === "3"){
-        try {
-          api.post('/getbyserviceid', obj).then((res)=>{
-           console.log("loststolen response", res?.data);
- 
-           setResponseData(res?.data)
- 
-          })
-           
-         }
-         catch (error) {
-           console.log("Error", error);
-         }
-      }
     }
-    
+}, [requestType, accountNumber]);
 
-    // console.log("selected request",requestType,"statusss",status);
-  }, [requestType])
+// Function to filter the response data based on the selected request type
+const filterData = (responseData, requestType) => {
+    switch (requestType) {
+        case "1": // Cheque Book Request
+            return {
+                CHequeBook: responseData.CHequeBook,
+                CreditorDebitCard: [], // Clear other lists
+                LostorStolen: [] // Clear other lists
+            };
+        case "2": // Credit/Debit Card
+            return {
+                CHequeBook: [], // Clear other lists
+                CreditorDebitCard: responseData.CreditorDebitCard,
+                LostorStolen: [] // Clear other lists
+            };
+        case "3": // Lost/Stolen Card
+            return {
+                CHequeBook: [], // Clear other lists
+                CreditorDebitCard: [], // Clear other lists
+                LostorStolen: responseData.LostorStolen
+            };
+        default:
+            return responseData; // Return full data for "Select" option or any other case
+    }
+};
 
-  const indexOfLastItem = currentPage * itemsPerPage;
-  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = Array.isArray(responseData) ? responseData.slice(indexOfFirstItem, indexOfLastItem) : [];
+const indexOfLastItem = currentPage * itemsPerPage;
+const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+const currentItems = Array.isArray(responseData) ? responseData.slice(indexOfFirstItem, indexOfLastItem) : [];
 
-  
-  const nextPage = () => {
-    setCurrentPage((prevPage) => prevPage + 1);
-  };
+const nextPage = () => {
+    if (indexOfLastItem < responseData.length) {
+        setCurrentPage((prevPage) => prevPage + 1);
+    }
+};
 
-  const prevPage = () => {
+const prevPage = () => {
     if (currentPage > 1) {
-      setCurrentPage((prevPage) => prevPage - 1);
+        setCurrentPage((prevPage) => prevPage - 1);
     }
-  };
+};
 
 const formatedate=(date)=>{
   return moment(date).format("DD-MM-YYYY");
@@ -200,7 +181,7 @@ const formatedate=(date)=>{
     <tbody>
     {["LostorStolen", "CHequeBook", "CreditorDebitCard"].map((type) => (
   responseData[type] && responseData[type].map((request, index) => (
-    <tr key={index}>
+    <tr className='viewstrow' key={index}>
       <td>{index + 1}</td>
       <td>{formatedate(request.requestdate)}</td>
       <td>{request.responsestatus}</td>

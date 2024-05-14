@@ -11,7 +11,7 @@ const AccountStatement = () => {
     const {accountNumber}=useParams();
     const[responseData,setResponseData]=useState([]);
 
-    const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(1);
 
     useEffect(()=>{
