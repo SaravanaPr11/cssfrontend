@@ -5,6 +5,7 @@
   justify-content: center;
 }
 .T_Container {
+  text-align: center;
   background-color: rgba(13, 26, 52, 0.8);
   display: block;
   padding: 20px;
@@ -17,8 +18,8 @@
 
 /* Logout button */
 .viewlogout {
-right: 10%;
-top: 30%;
+right: 5%;
+top: 8%;
 position: absolute;
 padding: 6px;
 border: none;
@@ -34,9 +35,9 @@ background-color: burlywood;
 
 /* Name display */
 .book123 {  
-  margin-left: 7px;
+  margin-left: 50%;
   padding-bottom: 2px;
-  color: #CCCCCC;
+  color: white;
   font-family: Calibri;
   font-size: 20px;
 }
@@ -49,22 +50,22 @@ background-color: burlywood;
 }
 
 /* Select dropdown for account number */
-.salview {
+.salview12 {
   width: 20%;
-  padding: 3px;
+  padding: 5px 5px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  margin-left: 19px;
+  margin-left: 20px;
 }
 
 .reqType {
+  padding: 5px 5px;
   width: 20%;
-  padding: 3px;
-  margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  margin-left: 40px;
+  margin-left: 20px;
+  transform: translateY(1px);
 }
 
 /* Table for displaying request status */
@@ -135,13 +136,17 @@ tr {
 }
 
 .viewlab{
+  margin-right: 50px;
   color: white;
+  font-weight: bold;
+  font-size: large;
 }
 
-.reqtlab{
-  color: white;
-}
 
 .reqlab12{
+  font-size: large;
   color: white;
+  transform: translateY(3px);
+  font-weight: bold;
 }
+

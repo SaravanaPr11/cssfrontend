@@ -60,7 +60,7 @@
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
-  transform: translateX(77px);
+  transform: translateX(62px);
 }
 
 .labcredit1 {
@@ -70,7 +70,7 @@
 .salcred1 {
   font-size: 16px;
   width: 60%;
-  transform: translateX(128px);
+  transform: translateX(112px);
   padding: 10px 20px;
   margin: 8px 0;
   border: 1px solid #ccc;
@@ -90,7 +90,7 @@
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
-  transform: translateX(79px);
+  transform: translateX(76px);
 }
 
 .credit {

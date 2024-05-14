@@ -155,9 +155,9 @@ const formatedate=(date)=>{
           <div className="T_border">
         
           <div>
-          <label className="viewlab" htmlFor="cardType">Account Number:
+          <label className="viewlab" htmlFor="cardType">Account Number
           <select
-  className='salview'
+  className='salview12'
   value={accountNumber}
   onChange={(e) => setAccountNumber(e.target.value)}
   required
@@ -170,7 +170,7 @@ const formatedate=(date)=>{
   ))}
 </select>
             </label>
-            <label className='reqlab12'> Request Type:  
+            <label className='reqlab12'> Request Type  
             <select
               className='reqType'
               name="requestType"

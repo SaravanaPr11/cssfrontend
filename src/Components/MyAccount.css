@@ -81,7 +81,7 @@ table, th, td {
 /* Styling for the table header */
 .titaccount {
   border: 2px solid black;
-  background-color: burlywood;
+  background-color: rgb(160, 211, 141);
   border-inline: 2px;
 }
 

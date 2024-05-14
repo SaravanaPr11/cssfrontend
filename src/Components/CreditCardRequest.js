@@ -19,6 +19,8 @@ function CreditCardRequest() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+  
     
     // You can perform further actions here, such as submitting the data.
   };
@@ -81,6 +83,8 @@ function CreditCardRequest() {
     setrequestMessage('');
   }
 
+  const asteriskStyle = { color: 'red' };
+
   return (
     <div>
       <button className='cardlogout' type="button" onClick={handlelogout}>Logout</button>
@@ -91,7 +95,7 @@ function CreditCardRequest() {
         <label className='namlab'>Name</label>
         <input className='namecredit' type='text' value={custname} readOnly />
           <div>
-          <label className="labcredit" htmlFor="cardType">Account Number</label>
+          <label className="labcredit" htmlFor="cardType">Account Number <span style={asteriskStyle}>*</span></label>
           <select
             className='salcred'
             value={accountNumber}
@@ -107,13 +111,13 @@ function CreditCardRequest() {
             </select>
           </div>
           <div>
-            <label  className="labcredit1" htmlFor="cardType">Card Type</label>
+            <label  className="labcredit1" htmlFor="cardType">Card Type <span style={asteriskStyle}>*</span></label>
             <select className="salcred1"
               id="cardType"
               value={cardType}
               onChange={(e) => setCardType(e.target.value)}
             >
-              <option value="">Select a card type</option>
+              <option value="">Select a Card type </option>
               {cardTypes.map((type) => (
                 <option key={type} value={type}>
                   {type}
