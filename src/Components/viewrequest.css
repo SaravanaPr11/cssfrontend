@@ -1,47 +1,51 @@
 /* Container for the entire component */
-.srcont
-{
+.srcont {
   display: flex;
   justify-content: center;
-
 }
+
 .T_Container {
   text-align: center;
   background-color: rgba(13, 26, 52, 0.8);
-  display: block;
   padding: 20px;
   width: 85%;
-  height: 90vh;
+  height: 78vh; /* Fixed height */
   border-radius: 20px;
   position: relative;
-  top: 15vh;
+  transform: translateY(18%);
+  /* overflow: hidden; Remove scroll */
 }
 
 /* Logout button */
 .viewlogout {
-right: 5%;
-top: 8%;
-position: absolute;
-padding: 6px;
-border: none;
-border-radius: 8px;
-background-color: burlywood;
+  right: 5%;
+  top: 5.5%;
+  position: absolute;
+  padding: 6px;
+  border: none;
+  border-radius: 8px;
+  background-color: burlywood;
 }
 
 .T_title {
-  font-size: 18px;
+  margin-top: -5px;
+  font-size: 14px;
   color: #e4d9ba;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font family for title */
 }
 
+.T_title h1{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-.viewstrow{
+.viewstrow {
   background-color: white;
 }
 
 /* Name display */
-.book123 {  
+.book123 {
   margin-left: 50%;
-  padding-bottom: 2px;
+  margin-top: -26px;
   color: white;
   font-family: Calibri;
   font-size: 20px;
@@ -50,7 +54,7 @@ background-color: burlywood;
 /* Border around the form */
 .T_border {
   padding: 5px;
-  margin-top: 12px;
+  margin-top: 10px;
   margin-bottom: 20px;
 }
 
@@ -77,6 +81,7 @@ background-color: burlywood;
 .Table {
   border-collapse: collapse;
   width: 100%;
+  margin-top: -10px;
 }
 
 /* Table elements */
@@ -89,10 +94,9 @@ tr {
   padding: auto 20px;
 }
 
-
 /* Table header */
 .viewtab {
-  border: 2px solid black;  
+  border: 2px solid black;
   background-color: rgb(160, 211, 141);
 }
 
@@ -120,7 +124,8 @@ tr {
 }
 
 /* Next and Previous buttons */
-.Nextbutton,.Prevbutton {
+.Nextbutton,
+.Prevbutton {
   width: 65px;
   cursor: pointer;
 }
@@ -135,23 +140,23 @@ tr {
   margin-top: 20px;
 }
 
-.Nextbutton, .Prevbutton, .Pagenumber{
+.Nextbutton,
+.Prevbutton,
+.Pagenumber {
   position: relative;
-  transform: translate(900px, -40px);
+  transform: translate(900px, -55px);
 }
 
-.viewlab{
+.viewlab {
   margin-right: 50px;
   color: white;
   font-weight: bold;
   font-size: large;
 }
 
-
-.reqlab12{
+.reqlab12 {
   font-size: large;
   color: white;
   transform: translateY(3px);
   font-weight: bold;
 }
-

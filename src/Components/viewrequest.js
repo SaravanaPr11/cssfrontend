@@ -2,11 +2,10 @@ import React, { useState,  useEffect } from 'react';
 import "./viewrequest.css";
 import api from './api/Api';
 import { useNavigate} from 'react-router-dom';
-
 import moment from 'moment';
 
 
-const RequestStatus = () => {
+  const RequestStatus = () => {
   // Sample request data
   const navigate = useNavigate();
   // const history = useHistory();
@@ -17,7 +16,6 @@ const RequestStatus = () => {
   const customerId = localStorage.getItem("cid");
   const [responseData, setResponseData] = useState([])
   const[accountData1,setAccountData1]=useState([])
-
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(5);
 
@@ -89,6 +87,7 @@ const filterData = (responseData, requestType) => {
             return responseData; // Return full data for "Select" option or any other case
     }
 };
+const combinedData = [].concat(...Object.values(responseData));
 
 const indexOfLastItem = currentPage * itemsPerPage;
 const indexOfFirstItem = indexOfLastItem - itemsPerPage;
@@ -105,6 +104,8 @@ const prevPage = () => {
         setCurrentPage((prevPage) => prevPage - 1);
     }
 };
+
+console.log(currentItems.length); 
 
 const formatedate=(date)=>{
   return moment(date).format("DD-MM-YYYY");
@@ -130,7 +131,7 @@ const formatedate=(date)=>{
     <div className="srcont">
     <div className="T_Container">
       <button className='viewlogout' type="button" onClick={handlelogout}>Logout</button>
-        <div className="T_title"><h1><center>View Request Status</center></h1></div>
+        <div className="T_title"><h1>View Request Status</h1></div>
         <div className="T_header">
         <h2 className='book123'>Name: {custname}</h2>
           <div className="T_border">
@@ -171,11 +172,11 @@ const formatedate=(date)=>{
     <thead>
       <tr className='viewtab'>
         <th>S.No</th>
-        <th className='reqdate'>RequestDate</th>
-        <th>ResponseStatus</th>
-        <th className='res'>ResponseMessage</th>
-        <th>ServiceId</th>
-        <th>ResponseDate</th>
+        <th className='reqdate'>Request Date</th>
+        <th>Response Status</th>
+        <th className='res'>Response Message</th>
+        <th>Service ID</th>
+        <th>Response Date</th>
       </tr>
     </thead>
     <tbody>

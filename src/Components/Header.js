@@ -9,11 +9,9 @@ function Header() {
       <div className='log_left'>
         <img className='log' src={logo} alt="Logo"/>
       </div>
-      <div className='navbar'>
         <div className='logo'>
           <Link to="/">ABC Bank Services</Link>
         </div>
-      </div>
     </header>
   );
 }

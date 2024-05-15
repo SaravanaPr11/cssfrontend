@@ -4,11 +4,12 @@
   display: block;
   padding: 20px;
   width: 85%;
-  height: 48vh;
+  height: 55vh;
   border-radius: 20px;
   position: relative;
   left: 50%;
   transform: translate(-50%, 51.5%);
+  margin-top: -40px;
 }
 
 /* Styling for the background header */
@@ -77,7 +78,7 @@ tr {
   position: absolute;
   text-align: center;
   right: 47%;
-  bottom: 26%;
+  bottom: 21%;
   color: rgb(13, 26, 52);
   background-color: burlywood;
   border-radius: 10px;
@@ -113,5 +114,12 @@ tr {
   cursor: pointer;
 }
 .PrevButton, .NextButton, .PageNumber{
- transform: translate(1100px, 175px);
+ transform: translate(1100px, 180px);
+}
+
+.tablestate td:nth-child(even){background-color: #e7e7e7;}
+
+.tablerow
+{
+  text-align: center;
 }

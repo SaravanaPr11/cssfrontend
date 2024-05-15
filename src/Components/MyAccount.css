@@ -8,7 +8,7 @@
   text-align: center;
   padding: 20px;
   width: 85%;
-  height: 48vh;
+  height: 55vh;
   border-radius: 20px;
   position: absolute;
   top: 54%;
@@ -65,9 +65,8 @@ table, th, td {
 /* Styling for the back button */
 .back-button1 {
   position: absolute;
-  bottom: 29%; 
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: 21%; 
+  left: 48.5%;
   color: black;
   font-size: medium;
   padding: 9px;
@@ -98,5 +97,19 @@ table, th, td {
 }
 
 .account-link{
-  background-color: white;
+  border: none;
+  background-color: rgb(204, 204, 204);
+  width: 60%;
+  height: 100%;
+  padding: 2px;
+  border-radius: 5px;
+  cursor: pointer;
 }
+
+.account-link:hover {
+  background-color: #272727;
+  color: white;
+
+}
+
+.tableaccount td:nth-child(even){background-color: #e7e7e7;}
