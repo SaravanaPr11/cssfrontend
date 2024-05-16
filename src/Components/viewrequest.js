@@ -15,26 +15,47 @@ const RequestStatus = () => {
     CHequeBook: [],
     CreditorDebitCard: []
   });
-  const[accountData1,setAccountData1]=useState([])
+  const [accountData1, setAccountData1] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 5;
+
+  useEffect(() => {
+    // Fetch account numbers when the component mounts
+    getAllAccountData();
+  }, []);
+
+  useEffect(() => {
+    if (accountData1.length > 0) {
+      // Set default account number here
+      setAccountNumber(accountData1[0].accountnumber);
+    }
+  }, [accountData1]);
 
   const Backoffice = () => {
     navigate("/CustomerServiceMenu")
   }
 
-  useEffect(() => {
-    getAccountNumbers();
-  }, []);
-
-  const getAccountNumbers = async () => {
+  const getAllAccountData = async () => {
     try {
       const response = await api.get(`/fetchAcc/${customerId}`);
       setAccountData1(response.data);
     } catch (error) {
-      console.error('Error fetching account numbers:', error);
+      console.error('Error fetching all account data:', error);
     }
   };
+
+const getAccountData = async () => {
+  try {
+    const response = await api.post('/getbyserviceid', {
+      service_request_id: +requestType,
+      accountNumber: +accountNumber
+    });
+    const filteredData = filterData(response?.data, requestType);
+    setResponseData(filteredData);
+  } catch (error) {
+    console.error('Error fetching account data:', error);
+  }
+};
 
   useEffect(() => {
     if (requestType) {
@@ -61,31 +82,31 @@ const RequestStatus = () => {
   const filterData = (responseData, requestType) => {
     if (requestType === "0") {
       return responseData;
-    }
-    switch (requestType) {
-      case "1":
-        return {
-          CHequeBook: responseData.CHequeBook,
-          CreditorDebitCard: [],
-          LostorStolen: []
-        };
-      case "2":
-        return {
-          CHequeBook: [],
-          CreditorDebitCard: responseData.CreditorDebitCard,
-          LostorStolen: []
-        };
-      case "3":
-        return {
-          CHequeBook: [],
-          CreditorDebitCard: [],
-          LostorStolen: responseData.LostorStolen
-        };
-      default:
-        return responseData;
+    } else {
+      const filteredData = { LostorStolen: [], CHequeBook: [], CreditorDebitCard: [] };
+  
+      responseData.LostorStolen.forEach((request) => {
+        if (request.serviceid === parseInt(requestType)) {
+          filteredData.LostorStolen.push(request);
+        }
+      });
+  
+      responseData.CHequeBook.forEach((request) => {
+        if (request.serviceid === parseInt(requestType)) {
+          filteredData.CHequeBook.push(request);
+        }
+      });
+  
+      responseData.CreditorDebitCard.forEach((request) => {
+        if (request.serviceid === parseInt(requestType)) {
+          filteredData.CreditorDebitCard.push(request);
+        }
+      });
+  
+      return filteredData;
     }
   };
-
+      
   const formatedate = (date) => {
     return moment(date).format("DD-MM-YYYY");
   }
@@ -163,22 +184,43 @@ const RequestStatus = () => {
                   </tr>
                 </thead>
                 <tbody>
-{(() => {
-  // Combine all requests into one array
-  const allRequests = [].concat(...Object.values(responseData));
-  // Slice the combined array based on the current page
-  const slicedRequests = allRequests.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
-  
-  return slicedRequests.map((request, index) => (
-    <tr className='viewstrow' key={index}>
-      <td>{(currentPage - 1) * itemsPerPage + index + 1}</td> {/* Calculate the correct serial number */}
-      <td>{formatedate(request.requestdate)}</td>
-      <td>{request.responsestatus}</td>
-      <td>{request.responseMessage}</td>
-      <td>{request.serviceid}</td>
-      <td>{request.responseDate ? formatedate(request.responseDate) : '-'}</td>
-    </tr>
-  ));
+                {(() => {
+  if (requestType !== "0") {
+    // Render for other request types
+    // Combine all requests into one array
+    const allRequests = [].concat(...Object.values(responseData));
+    // Sort the requests by date in descending order
+    const sortedRequests = allRequests.sort((a, b) => new Date(b.requestdate) - new Date(a.requestdate));
+    // Slice the combined array based on the current page
+    const slicedRequests = sortedRequests.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
+    return slicedRequests.map((request, index) => (
+      <tr className='viewstrow' key={index}>
+        <td>{(currentPage - 1) * itemsPerPage + index + 1}</td>
+        <td>{formatedate(request.requestdate)}</td>
+        <td>{request.responsestatus}</td>
+        <td>{request.responseMessage}</td>
+        <td>{request.serviceid}</td>
+        <td>{request.responseDate ? formatedate(request.responseDate) : '-'}</td>
+      </tr>
+    ));
+  } else {
+    // Render for request type 0
+    const requestsOfType0 = Object.keys(responseData).map((type) => responseData[type]).flat();
+    // Sort the requests by date in descending order
+    const sortedRequests = requestsOfType0.sort((a, b) => new Date(b.requestdate) - new Date(a.requestdate));
+    // Slice the combined array based on the current page
+    const slicedRequests = sortedRequests.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
+    return slicedRequests.map((request, index) => (
+      <tr className='viewstrow' key={index}>
+        <td>{(currentPage - 1) * itemsPerPage + index + 1}</td>
+        <td>{formatedate(request.requestdate)}</td>
+        <td>{request.responsestatus}</td>
+        <td>{request.responseMessage}</td>
+        <td>{request.serviceid}</td>
+        <td>{request.responseDate ? formatedate(request.responseDate) : '-'}</td>
+      </tr>
+    ));
+  }
 })()}
                 </tbody>
               </table>

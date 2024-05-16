@@ -140,6 +140,12 @@ tr {
   margin-top: 20px;
 }
 
+.paginationControls{
+  padding-top : 10px;
+  position: relative;
+  text-align: right;
+}
+
 .Nextbutton,
 .Prevbutton,
 .Pagenumber {
