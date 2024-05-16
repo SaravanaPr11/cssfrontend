@@ -43,8 +43,8 @@ function StolenDebitCard() {
       const saveObj3 = {
         accountNumber: Number(accountNumber),
         requestMessage: requestMessage,
-        losttolenDate: stolenDate, // Ensure the date format matches the API's expected format
-        cardNumber: cardNumber, // Assuming cardNumber is a number
+        losttolenDate: stolenDate, 
+        cardNumber: cardNumber, 
         cardType: cardType
       };
   
@@ -81,6 +81,10 @@ function StolenDebitCard() {
   };
 
   const asteriskStyle = { color: "red" };
+
+  const today = new Date();
+  const maxDate = new Date(today.getTime() + 7 * 24 * 60 * 60 * 1000).toISOString().split("T")[0];
+  const minDate = today.toISOString().split("T")[0];
 
   return (
     <div>
@@ -140,6 +144,8 @@ function StolenDebitCard() {
               type="date"
               id="lostStolenOn"
               value={stolenDate}
+              min={minDate}
+              max={maxDate}
               onChange={(e) => setStolenDate(e.target.value)}
             />
           </div>

@@ -226,7 +226,7 @@ const getAccountData = async () => {
               </table>
               <div className="paginationControls">
                 <button disabled={currentPage === 1} onClick={() => setCurrentPage(currentPage - 1)}>Previous</button>
-                <span>Page {currentPage}</span>
+                <span className='pgno'>{currentPage}</span>
                 <button disabled={currentPage === totalPages("LostorStolen")} onClick={() => setCurrentPage(currentPage + 1)}>Next</button>
               </div>
             </div>

@@ -9,10 +9,10 @@
   background-color: rgba(13, 26, 52, 0.8);
   padding: 20px;
   width: 85%;
-  height: 78vh; /* Fixed height */
+  height: 75vh; /* Fixed height */
   border-radius: 20px;
   position: relative;
-  transform: translateY(18%);
+  transform: translateY(21%);
   /* overflow: hidden; Remove scroll */
 }
 
@@ -137,19 +137,32 @@ tr {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  margin-top: 20px;
 }
 
 .paginationControls{
   padding-top : 10px;
+  padding-right: 10px;
   position: relative;
   text-align: right;
+}
+
+.paginationControls button{
+  padding: 2px ;
+  cursor: pointer;
+  width: 65px;
+}
+
+.pgno{
+  position: relative;
+  color: white;
+  background-color: black;
+  padding: 1px 8px;
+  padding-bottom: 3px;
 }
 
 .Nextbutton,
 .Prevbutton,
 .Pagenumber {
-  position: relative;
   transform: translate(900px, -55px);
 }
 
@@ -167,3 +180,4 @@ tr {
   font-weight: bold;
 }
 
+.Table td:nth-child(even){background-color: #e7e7e7;}
