@@ -22,8 +22,14 @@ const ServiceRequestMenu = () => {
   };
 
   const handleLogout = () => {
-    navigate('/');
+    // Clear any sensitive data here
+    localStorage.removeItem("cid");
+    localStorage.removeItem("name");
+
+    // Navigate to the login page and replace history
+    navigate('/', { replace: true });
   };
+
 
   return (
     <div className="Service">

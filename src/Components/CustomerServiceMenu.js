@@ -27,9 +27,15 @@ function CustomerServiceMenu() {
     const viewpage=()=>{
         Navigate('/view');
     }
-    const handlelogout= () => {
-        Navigate('/');
-      }
+
+  const handlelogout = () => {
+    // Clear any sensitive data here
+    localStorage.removeItem("cid");
+    localStorage.removeItem("name");
+
+    // Navigate to the login page and replace history
+    Navigate('/', { replace: true });
+  };
 
 
   return (

@@ -116,9 +116,13 @@ const getAccountData = async () => {
   }
 
   const handlelogout = () => {
-    localStorage.clear();
-    navigate('/')
-  }
+    // Clear any sensitive data here
+    localStorage.removeItem("cid");
+    localStorage.removeItem("name");
+
+    // Navigate to the login page and replace history
+    navigate('/', { replace: true });
+  };
 
   const getServiceType = (serviceid) => {
     switch(serviceid) {

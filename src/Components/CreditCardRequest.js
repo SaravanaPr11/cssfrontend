@@ -45,10 +45,15 @@ function CreditCardRequest() {
   const handleBack = () => {
     navigate('/ServiceRequestMenu');
   };
-  const handlelogout=()=>{
-    navigate('/')
-  }
+  
+  const handlelogout = () => {
+    // Clear any sensitive data here
+    localStorage.removeItem("cid");
+    localStorage.removeItem("name");
 
+    // Navigate to the login page and replace history
+    navigate('/', { replace: true });
+  };
   const saveCreditData= async () => {
     var saveObj1 = {
       serviceRequestId:2,

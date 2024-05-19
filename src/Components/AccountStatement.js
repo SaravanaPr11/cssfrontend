@@ -35,8 +35,14 @@ const AccountStatement = () => {
     };
 
     const handleLogout = () => {
-        navigate('/');
-    };
+        // Clear any sensitive data here
+        localStorage.removeItem("cid");
+        localStorage.removeItem("name");
+    
+        // Navigate to the login page and replace history
+        navigate('/', { replace: true });
+      };
+    
 
     let currentItems = [];
     if (Array.isArray(responseData) && responseData.length > 0) {

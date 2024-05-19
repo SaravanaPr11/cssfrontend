@@ -34,7 +34,12 @@ function StolenDebitCard() {
   };
 
   const handleLogout = () => {
-    navigate("/");
+    // Clear any sensitive data here
+    localStorage.removeItem("cid");
+    localStorage.removeItem("name");
+
+    // Navigate to the login page and replace history
+    navigate('/', { replace: true });
   };
 
   const saveStolenData = async () => {
@@ -71,7 +76,8 @@ function StolenDebitCard() {
     }
   };
       
-  const handleSubmitStolen = async () => {
+  const handleSubmitStolen = async (e) => {
+    e.preventDefault(e); 
     await saveStolenData();
     // Reset form fields after submission
     setStolenDate("");

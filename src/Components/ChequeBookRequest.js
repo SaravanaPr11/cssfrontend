@@ -32,8 +32,14 @@ const ChequeBookRequest = () => {
   };
 
   const handleLogout = () => {
-    navigate('/');
+    // Clear any sensitive data here
+    localStorage.removeItem("cid");
+    localStorage.removeItem("name");
+
+    // Navigate to the login page and replace history
+    navigate('/', { replace: true });
   };
+
 
   const saveChequeData = async () => {
     const saveObj = {
@@ -72,7 +78,8 @@ const ChequeBookRequest = () => {
     }
   };
 
-  const handleSubmitCheque = async () => {
+  const handleSubmitCheque = async (e) => {
+    e.preventDefault(); 
     await saveChequeData();
     setChequeLeaves('');
     setAccountNumber('');
