@@ -12,7 +12,18 @@ function LoginForm({ OnLogin }) {
   const [userNameError, setUserNameError] = useState('');
   const [userPassworderror, setpasswordError] = useState('');
   const [serverError, setServerError] = useState(' ');
- 
+
+  useEffect(() => {
+    // Clear user session data
+    localStorage.removeItem('cid');
+    localStorage.removeItem('name');
+    
+    // Redirect to login page
+    navigate('/');
+    
+    // Clear browser history to prevent back navigation
+    window.history.replaceState(null, null, window.location.href);
+  }, [navigate]);
 
 
   const handelUserNameChange = (event) => {
@@ -29,7 +40,6 @@ function LoginForm({ OnLogin }) {
       setpasswordError('');
     }
   }
-
 
   const handleSubmit = async () => {
     if (!userName || !password) {
@@ -78,7 +88,6 @@ function LoginForm({ OnLogin }) {
     setpasswordError('');
     setServerError('');
   }
-
 
   return (
     <div className="body" >
