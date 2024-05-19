@@ -57,6 +57,7 @@ function StolenDebitCard() {
         if (response.status === 200) {
           console.log("Data saved", response.data);
           alert("Request Data saved successfully");
+          navigate('/CustomerServiceMenu');
         } else {
           console.error("Failed to save data:", response.statusText);
           alert("Failed to save request data");

@@ -8,7 +8,7 @@
   text-align: center;
   background-color: rgba(13, 26, 52, 0.8);
   padding: 20px;
-  width: 85%;
+  width: 90%;
   height: 75vh; /* Fixed height */
   border-radius: 20px;
   position: relative;
@@ -85,6 +85,7 @@
 }
 
 /* Table elements */
+.Table
 table,
 th,
 td,
@@ -137,6 +138,7 @@ tr {
   border: none;
   border-radius: 8px;
   cursor: pointer;
+  margin-top: -20px;
 }
 
 .paginationControls{
@@ -181,3 +183,15 @@ tr {
 }
 
 .Table td:nth-child(even){background-color: #e7e7e7;}
+
+.resGrp{
+  width: 14%;
+}
+
+.resMsg{
+  width: 20%;
+}
+
+.Table td{
+  padding: 5px;
+}

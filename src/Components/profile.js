@@ -7,7 +7,7 @@ import api from './api/Api';
 
 const Profile = () => {
 
-  const [Name, setname] = useState(' ')
+  const [Name, setname] = useState('')
   const [dob, setDob] = useState('')
   const [phoneNo, setPhoneno] = useState('')
   const [door_street, setDoorstreet] = useState('')
@@ -20,7 +20,7 @@ const Profile = () => {
   const [Email, setEmail] = useState('')
   const [state, setState] = useState('')
   const[stateerror,setstateerror]=useState(false)
-  const [customerId, setCustomerid] = useState(' ')
+  const [customerId, setCustomerid] = useState('')
   
 
  
@@ -138,6 +138,7 @@ if(door_street && pincode && city && state){
         .then(response => {
           console.log("Data saved", response.data);
           alert("Data updated successfully")
+          navigate('/CustomerServiceMenu');
         })
 
     }
@@ -171,19 +172,19 @@ if(door_street && pincode && city && state){
   <input className='profilinput' type="text" value={Email} onChange={(e) => setEmail(e.target.value)} readOnly/>
   
     <label className='lab'>Door & Street<span style={{ color: 'red' }}>*</span></label>
-    <input style={{ backgroundColor:"#edd1bc" }} className='profilinput'  type='text' name='street' value={door_street} onChange={handledoorstreet} />
+    <input style={{ backgroundColor:"white" }} className='profilinput'  type='text' name='street' value={door_street} onChange={handledoorstreet} />
     <span style={{ color: "red", display: "block"}}>{door_streeterror}</span>
     
     <label className='lab'>City<span style={{ color: 'red' }}>*</span></label>
-    <input style={{ backgroundColor:"#edd1bc" }}  className='profilinput' type='text' name='city' value={city} onChange={handlecity}/>
+    <input style={{ backgroundColor:"white" }}  className='profilinput' type='text' name='city' value={city} onChange={handlecity}/>
     <span style={{ color: "red", display: "block"}}>{cityerror}</span>
     
     <label className='lab'>State<span style={{ color: 'red' }}>*</span></label>
-    <input style={{ backgroundColor:"#edd1bc" }}  className='profilinput' type='text' name='state' value={state} onChange={handlestate}/>
+    <input style={{ backgroundColor:"white" }}  className='profilinput' type='text' name='state' value={state} onChange={handlestate}/>
     <span style={{ color: "red", display: "block" }}>{stateerror}</span>
     
     <label className='lab'>Pincode<span style={{ color: 'red' }}>*</span></label>
-    <input style={{ backgroundColor:"#edd1bc" }}  className='profilinput' type='text' name='pincode'  value={pincode} onChange={handlepincode}/>
+    <input style={{ backgroundColor:"white" }}  className='profilinput' type='text' name='pincode'  value={pincode} onChange={handlepincode}/>
     <span style={{ color: "red", display: "block" }}>{pincodeerror}</span>
     </div>
     <button className='btnprofil' type="button" onClick={profileupdate}>Submit</button>

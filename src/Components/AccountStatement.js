@@ -10,7 +10,7 @@ const AccountStatement = () => {
     const { accountNumber } = useParams();
     const [responseData, setResponseData] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
-    const [itemsPerPage] = useState(3);
+    const [itemsPerPage] = useState(5);
 
     useEffect(() => {
         getStatementDetails();
@@ -24,19 +24,19 @@ const AccountStatement = () => {
         } catch (error) {
             console.error("Error fetching account statement:", error);
         }
-    }
+    };
 
     const handleBack = () => {
         navigate("/MyAccount");
-    }
+    };
 
     const formatDate = (date) => {
         return moment(date).format("DD-MM-YYYY");
-    }
+    };
 
     const handleLogout = () => {
         navigate('/');
-    }
+    };
 
     let currentItems = [];
     if (Array.isArray(responseData) && responseData.length > 0) {
@@ -68,6 +68,7 @@ const AccountStatement = () => {
                 <table className="tablestate">
                     <thead>
                         <tr className="titstat">
+                            <th>S.No</th>
                             <th>TransactionDate</th>
                             <th>Description</th>
                             <th>Credit/Debit</th>
@@ -78,7 +79,11 @@ const AccountStatement = () => {
 
                     <tbody>
                         {currentItems.map((accno, index) => (
-                            <tr className="tablerow" key={index}>
+                            <tr 
+                                key={index} 
+                                className={`tablerow ${accno.description.toLowerCase() === 'credited' ? 'credited' : accno.description.toLowerCase() === 'debited' ? 'debited' : ''}`}
+                            >
+                                <td>{(currentPage - 1) * itemsPerPage + index + 1}</td>
                                 <td>{formatDate(accno.date)}</td>
                                 <td>{accno.description}</td>
                                 <td>{accno.creditOrDebitAmount}</td>

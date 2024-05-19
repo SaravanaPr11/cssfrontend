@@ -65,6 +65,7 @@ function CreditCardRequest() {
         .then(response => {
           console.log("Data saved", response.data);
           alert(" Request Data save successfully")
+          navigate('/CustomerServiceMenu');
         })
       }
       else{

@@ -51,6 +51,7 @@ const ChequeBookRequest = () => {
           if (response.data.status === "success") {
             console.log("Data saved successfully");
             alert("Request Data saved successfully");
+            navigate('/CustomerServiceMenu');
           } else if (response.data.data === "No account number found") {
             console.error("No account number found");
             alert("No account number found");

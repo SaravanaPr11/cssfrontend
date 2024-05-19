@@ -23,7 +23,7 @@
   justify-content: center;
   font-size: 23px;
   font-weight: bold;
-  margin-top: 2%;
+  margin-top: -55px;
 }
 
 .my-Accounts p {
@@ -55,6 +55,7 @@
 }
 
 /* Styling for the table headers and cells */
+.tableaccount
 table, th, td {
   margin: auto;
   border: 1px solid black;

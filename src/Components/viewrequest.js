@@ -120,6 +120,19 @@ const getAccountData = async () => {
     navigate('/')
   }
 
+  const getServiceType = (serviceid) => {
+    switch(serviceid) {
+      case 1:
+        return 'Chequebook';
+      case 2:
+        return 'Credit/Debit Card';
+      case 3:
+        return 'Lost/Stolen Card';
+      default:
+        return 'Unknown Service';
+    }
+  };  
+
   const totalPages = (type) => {
     if (requestType === "0") {
       const data = responseData[type] || [];
@@ -176,10 +189,11 @@ const getAccountData = async () => {
                 <thead>
                   <tr className='viewtab'>
                     <th>S.No</th>
+                    <th>Request Type</th>
                     <th className='reqdate'>Request Date</th>
+                    <th className='res'>Request Message</th>
                     <th>Response Status</th>
-                    <th className='res'>Response Message</th>
-                    <th>Service ID</th>
+                    <th>Response Message</th>
                     <th>Response Date</th>
                   </tr>
                 </thead>
@@ -196,11 +210,12 @@ const getAccountData = async () => {
     return slicedRequests.map((request, index) => (
       <tr className='viewstrow' key={index}>
         <td>{(currentPage - 1) * itemsPerPage + index + 1}</td>
+        <td>{getServiceType(request.serviceid)}</td>
         <td>{formatedate(request.requestdate)}</td>
+        <td className='resMsg'>{request.requestMessage}</td>
         <td>{request.responsestatus}</td>
-        <td>{request.responseMessage}</td>
-        <td>{request.serviceid}</td>
-        <td>{request.responseDate ? formatedate(request.responseDate) : '-'}</td>
+        <td className='resMsg'>{request.responseMessage}</td>
+        <td className='resGrp'>{request.responseDate ? formatedate(request.responseDate) : '-'}</td>
       </tr>
     ));
   } else {
@@ -213,11 +228,12 @@ const getAccountData = async () => {
     return slicedRequests.map((request, index) => (
       <tr className='viewstrow' key={index}>
         <td>{(currentPage - 1) * itemsPerPage + index + 1}</td>
+        <td>{getServiceType(request.serviceid)}</td>
         <td>{formatedate(request.requestdate)}</td>
+        <td className='resMsg'>{request.requestMessage}</td>
         <td>{request.responsestatus}</td>
-        <td>{request.responseMessage}</td>
-        <td>{request.serviceid}</td>
-        <td>{request.responseDate ? formatedate(request.responseDate) : '-'}</td>
+        <td className='resMsg'>{request.responseMessage}</td>
+        <td className='resGrp'>{request.responseDate ? formatedate(request.responseDate) : '-'}</td>
       </tr>
     ));
   }
