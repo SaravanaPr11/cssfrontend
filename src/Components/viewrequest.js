@@ -137,14 +137,14 @@ const getAccountData = async () => {
     }
   };  
 
-  const totalPages = (type) => {
-    if (requestType === "0") {
-      const data = responseData[type] || [];
-      return Math.ceil(data.length / itemsPerPage);
+  const totalPages = () => {
+    let totalData = [];
+    if (requestType !== "0") {
+      totalData = [].concat(...Object.values(responseData)).filter((request) => request.serviceid === parseInt(requestType));
     } else {
-      const data = responseData[type] || [];
-      return Math.ceil(data.length / itemsPerPage);
+      totalData = [].concat(...Object.values(responseData));
     }
+    return Math.ceil(totalData.length / itemsPerPage);
   };
 
   console.log(itemsPerPage);
