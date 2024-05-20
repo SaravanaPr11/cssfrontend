@@ -15,7 +15,7 @@ function CreditCardRequest() {
   const custname = localStorage.getItem('name');
 
    
-  const cardTypes = ["Debit", "Credit", "master"]; // Replace with your card types
+  const cardTypes = ["Debit", "Credit", "Master"]; // Replace with your card types
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -64,13 +64,13 @@ function CreditCardRequest() {
     // console.log("123456789"+serviceRequestId);
     console.log("ujghjgf", saveObj1);
     try {
-      if(cardType && accountNumber && requestMessage){
+      if(cardType && accountNumber){
 
      await api.post('/savecardrequest', saveObj1)
         .then(response => {
           console.log("Data saved", response.data);
           alert(" Request Data save successfully")
-          navigate('/CustomerServiceMenu');
+          navigate('/ServiceRequestMenu');
         })
       }
       else{

@@ -54,7 +54,7 @@ function StolenDebitCard() {
       };
   
       // Check if all mandatory fields are filled
-      if (accountNumber && cardType && stolenDate && cardNumber && requestMessage) {
+      if (accountNumber && cardType && stolenDate) {
         // Make the POST request to the API endpoint
         const response = await api.post('/savelost', saveObj3);
   
@@ -62,7 +62,7 @@ function StolenDebitCard() {
         if (response.status === 200) {
           console.log("Data saved", response.data);
           alert("Request Data saved successfully");
-          navigate('/CustomerServiceMenu');
+          navigate('/ServiceRequestMenu');
         } else {
           console.error("Failed to save data:", response.statusText);
           alert("Failed to save request data");
@@ -90,8 +90,8 @@ function StolenDebitCard() {
   const asteriskStyle = { color: "red" };
 
   const today = new Date();
-  const maxDate = new Date(today.getTime() + 7 * 24 * 60 * 60 * 1000).toISOString().split("T")[0];
-  const minDate = today.toISOString().split("T")[0];
+  const minDate = new Date(today.getTime() - 7 * 24 * 60 * 60 * 1000).toISOString().split("T")[0];
+  const maxDate = today.toISOString().split("T")[0];  
 
   return (
     <div>

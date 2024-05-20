@@ -2,7 +2,7 @@
 .header {
     background-color:rgba(13, 26, 52, 0.841);
     padding: 0px;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     position: fixed;
@@ -27,12 +27,11 @@
   }
   
  .log{
+   position: relative;
     width: 240px;
-    margin-right: 350px;
     height: 78px;
  }
  .log_left{
     display: flex;
     flex: 1;
-    justify-content: flex-end;
  }

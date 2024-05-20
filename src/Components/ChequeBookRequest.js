@@ -50,14 +50,14 @@ const ChequeBookRequest = () => {
     };
 
     try {
-      if (noOfChequeLeaves && accountNumber && requestMessage) {
+      if (noOfChequeLeaves && accountNumber) {
         const response = await api.post('/postcardRequest', saveObj);
         console.log("Response:", response);
         if (response.data && response.status === 200) {
           if (response.data.status === "success") {
             console.log("Data saved successfully");
             alert("Request Data saved successfully");
-            navigate('/CustomerServiceMenu');
+            navigate('/ServiceRequestMenu');
           } else if (response.data.data === "No account number found") {
             console.error("No account number found");
             alert("No account number found");
