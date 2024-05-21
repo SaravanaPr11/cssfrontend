@@ -32,8 +32,8 @@ const RequestStatus = () => {
   }, [accountData1]);
 
   const Backoffice = () => {
-    navigate("/CustomerServiceMenu")
-  }
+    navigate("/CustomerServiceMenu");
+  };
 
   const getAllAccountData = async () => {
     try {
@@ -44,18 +44,18 @@ const RequestStatus = () => {
     }
   };
 
-const getAccountData = async () => {
-  try {
-    const response = await api.post('/getbyserviceid', {
-      service_request_id: +requestType,
-      accountNumber: +accountNumber
-    });
-    const filteredData = filterData(response?.data, requestType);
-    setResponseData(filteredData);
-  } catch (error) {
-    console.error('Error fetching account data:', error);
-  }
-};
+  const getAccountData = async () => {
+    try {
+      const response = await api.post('/getbyserviceid', {
+        service_request_id: +requestType,
+        accountNumber: +accountNumber
+      });
+      const filteredData = filterData(response?.data, requestType);
+      setResponseData(filteredData);
+    } catch (error) {
+      console.error('Error fetching account data:', error);
+    }
+  };
 
   useEffect(() => {
     if (requestType) {
@@ -84,29 +84,29 @@ const getAccountData = async () => {
       return responseData;
     } else {
       const filteredData = { LostorStolen: [], CHequeBook: [], CreditorDebitCard: [] };
-  
+
       responseData.LostorStolen.forEach((request) => {
         if (request.serviceid === parseInt(requestType)) {
           filteredData.LostorStolen.push(request);
         }
       });
-  
+
       responseData.CHequeBook.forEach((request) => {
         if (request.serviceid === parseInt(requestType)) {
           filteredData.CHequeBook.push(request);
         }
       });
-  
+
       responseData.CreditorDebitCard.forEach((request) => {
         if (request.serviceid === parseInt(requestType)) {
           filteredData.CreditorDebitCard.push(request);
         }
       });
-  
+
       return filteredData;
     }
   };
-      
+
   const formatedate = (date) => {
     return moment(date).format("DD-MM-YYYY");
   }
@@ -135,7 +135,7 @@ const getAccountData = async () => {
       default:
         return 'Unknown Service';
     }
-  };  
+  };
 
   const totalPages = () => {
     let totalData = [];
@@ -147,7 +147,23 @@ const getAccountData = async () => {
     return Math.ceil(totalData.length / itemsPerPage);
   };
 
-  console.log(itemsPerPage);
+  const nextPage = () => {
+    setCurrentPage((prevPage) => prevPage + 1);
+  };
+
+  const prevPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage((prevPage) => prevPage - 1);
+    }
+  };
+
+  const firstPage = () => {
+    setCurrentPage(1);
+  };
+
+  const lastPage = () => {
+    setCurrentPage(totalPages());
+  };
 
   return (
     <div className="srcont">
@@ -203,51 +219,33 @@ const getAccountData = async () => {
                 </thead>
                 <tbody>
                 {(() => {
-  if (requestType !== "0") {
-    // Render for other request types
-    // Combine all requests into one array
-    const allRequests = [].concat(...Object.values(responseData));
-    // Sort the requests by date in descending order
-    const sortedRequests = allRequests.sort((a, b) => new Date(b.requestdate) - new Date(a.requestdate));
-    // Slice the combined array based on the current page
-    const slicedRequests = sortedRequests.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
-    return slicedRequests.map((request, index) => (
-      <tr className='viewstrow' key={index}>
-        <td>{(currentPage - 1) * itemsPerPage + index + 1}</td>
-        <td>{getServiceType(request.serviceid)}</td>
-        <td>{formatedate(request.requestdate)}</td>
-        <td className='resMsg'>{request.requestMessage}</td>
-        <td>{request.responsestatus}</td>
-        <td className='resMsg'>{request.responseMessage}</td>
-        <td className='resGrp'>{request.responseDate ? formatedate(request.responseDate) : '-'}</td>
-      </tr>
-    ));
-  } else {
-    // Render for request type 0
-    const requestsOfType0 = Object.keys(responseData).map((type) => responseData[type]).flat();
-    // Sort the requests by date in descending order
-    const sortedRequests = requestsOfType0.sort((a, b) => new Date(b.requestdate) - new Date(a.requestdate));
-    // Slice the combined array based on the current page
-    const slicedRequests = sortedRequests.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
-    return slicedRequests.map((request, index) => (
-      <tr className='viewstrow' key={index}>
-        <td>{(currentPage - 1) * itemsPerPage + index + 1}</td>
-        <td>{getServiceType(request.serviceid)}</td>
-        <td>{formatedate(request.requestdate)}</td>
-        <td className='resMsg'>{request.requestMessage}</td>
-        <td>{request.responsestatus}</td>
-        <td className='resMsg'>{request.responseMessage}</td>
-        <td className='resGrp'>{request.responseDate ? formatedate(request.responseDate) : '-'}</td>
-      </tr>
-    ));
-  }
-})()}
+                  const allRequests = requestType !== "0" 
+                    ? [].concat(...Object.values(responseData)).filter((request) => request.serviceid === parseInt(requestType))
+                    : [].concat(...Object.values(responseData));
+                  
+                  const sortedRequests = allRequests.sort((a, b) => new Date(b.requestdate) - new Date(a.requestdate));
+                  const slicedRequests = sortedRequests.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
+                  
+                  return slicedRequests.map((request, index) => (
+                    <tr className='viewstrow' key={index}>
+                      <td>{(currentPage - 1) * itemsPerPage + index + 1}</td>
+                      <td>{getServiceType(request.serviceid)}</td>
+                      <td>{formatedate(request.requestdate)}</td>
+                      <td className='resMsg'>{request.requestMessage}</td>
+                      <td>{request.responsestatus}</td>
+                      <td className='resMsg'>{request.responseMessage}</td>
+                      <td className='resGrp'>{request.responseDate ? formatedate(request.responseDate) : '-'}</td>
+                    </tr>
+                  ));
+                })()}
                 </tbody>
               </table>
               <div className="paginationControls">
-                <button disabled={currentPage === 1} onClick={() => setCurrentPage(currentPage - 1)}>Previous</button>
+                <button className='Firstpg' onClick={firstPage} disabled={currentPage === 1}>&lt;&lt;</button>
+                <button className='Prevpg' onClick={prevPage} disabled={currentPage === 1}>Previous</button>
                 <span className='pgno'>{currentPage}</span>
-                <button disabled={currentPage === totalPages("LostorStolen")} onClick={() => setCurrentPage(currentPage + 1)}>Next</button>
+                <button className='Nextpg' onClick={nextPage} disabled={currentPage === totalPages()}>Next</button>
+                <button className='Lastpg' onClick={lastPage} disabled={currentPage === totalPages()}>&gt;&gt;</button>
               </div>
             </div>
             <div className="T_SubmitController">

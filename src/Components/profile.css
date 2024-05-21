@@ -51,9 +51,9 @@
   width: 60%; /* Adjust width for padding */
   border: 1px solid #5f5f5f; /* Add border */
   border-radius: 4px;
-  padding: 4px;
+  padding: 4px 10px;
   margin: 0;
-  background-color: #e4d9ba;
+  background-color: #dbcb9f;
 }
 
 .btnprofil,

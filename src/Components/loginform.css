@@ -111,6 +111,7 @@ body{
     }
 
 .icon1{
+    display: flexbox;
     position: absolute;
     left: 120%;
     top: 63%;
@@ -147,4 +148,3 @@ body{
     margin-left: 1.75em;
     margin-top: 6px;
 }
-

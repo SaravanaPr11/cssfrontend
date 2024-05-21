@@ -51,6 +51,8 @@ const AccountStatement = () => {
         currentItems = responseData.slice(indexOfFirstItem, indexOfLastItem);
     }
 
+    const totalPages = Math.ceil(responseData.length / itemsPerPage);
+
     const nextPage = () => {
         setCurrentPage((prevPage) => prevPage + 1);
     };
@@ -59,6 +61,14 @@ const AccountStatement = () => {
         if (currentPage > 1) {
             setCurrentPage((prevPage) => prevPage - 1);
         }
+    };
+
+    const firstPage = () => {
+        setCurrentPage(1);
+    };
+
+    const lastPage = () => {
+        setCurrentPage(totalPages);
     };
 
     return (
@@ -75,7 +85,7 @@ const AccountStatement = () => {
                     <thead>
                         <tr className="titstat">
                             <th>S.No</th>
-                            <th>TransactionDate</th>
+                            <th>Transaction Date</th>
                             <th>Description</th>
                             <th>Credit/Debit</th>
                             <th>Cheque/Ref No</th>
@@ -105,6 +115,13 @@ const AccountStatement = () => {
             </div>
             <div className="Pagination">
                 <button
+                    className="FirstButton"
+                    onClick={firstPage}
+                    disabled={currentPage === 1}
+                >
+                    &lt;&lt;
+                </button>
+                <button
                     className="PrevButton"
                     onClick={prevPage}
                     disabled={currentPage === 1}
@@ -115,9 +132,16 @@ const AccountStatement = () => {
                 <button
                     className="NextButton"
                     onClick={nextPage}
-                    disabled={currentItems.length < itemsPerPage}
+                    disabled={currentPage === totalPages}
                 >
                     Next
+                </button>
+                <button
+                    className="LastButton"
+                    onClick={lastPage}
+                    disabled={currentPage === totalPages}
+                >
+                    &gt;&gt;
                 </button>
             </div>
         </div>
