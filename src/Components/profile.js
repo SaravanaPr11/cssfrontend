@@ -103,24 +103,24 @@ const Profile = () => {
   
 
 
-const profileupdate = async () => {
-if(door_street === ''){
-  setDoorstreeterror('enter the door and street');
-  return;
-}
-else if(state === ''){
-  setstateerror('enter the state');
-  return;
-}
-else if(city === '' ){
-  setcityerror('enter the city');
-  return;
-}
-else if(pincode === ''){
-  setpincodeerror('enter the pincode');
-  return;
-}
-
+  const profileupdate = async () => {
+    if (door_street === '') {
+      setDoorstreeterror('Enter the door and street');
+      return;
+    } else if (state === '') {
+      setstateerror('Enter the state');
+      return;
+    } else if (city === '') {
+      setcityerror('Enter the city');
+      return;
+    } else if (pincode === '') {
+      setpincodeerror('Enter the pincode');
+      return;
+    } else if (pincode.length !== 6) {
+      setpincodeerror('Pincode should contain exactly 6 characters');
+      return;
+    }
+  
 
     var updateObj = {
       id: customerId,
