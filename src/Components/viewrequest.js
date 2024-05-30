@@ -174,7 +174,7 @@ const RequestStatus = () => {
           <h2 className='book123'>Name: {custname}</h2>
           <div className="T_border">
             <div>
-              <label className="viewlab" htmlFor="cardType">Account Number
+              <label className="viewlab" htmlFor="cardType">Account Number<span style={{ color: 'red' }}> *</span>
                 <select
                   className='salview12'
                   value={accountNumber}
