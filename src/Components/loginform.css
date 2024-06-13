@@ -148,3 +148,8 @@ body{
     margin-left: 1.75em;
     margin-top: 6px;
 }
+
+.serverError {
+    color: red;
+    transform: translateY(10px);
+}

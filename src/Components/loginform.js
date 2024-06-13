@@ -3,26 +3,18 @@ import './loginform.css';
 import { useNavigate } from 'react-router-dom';
 import api from './api/Api';
 
-function LoginForm({ OnLogin }) {
-  const [userName, setUsername] = useState('');
+function LoginForm() {
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [userNameError, setUserNameError] = useState('');
-  const [userPassworderror, setPasswordError] = useState('');
+  const [userPasswordError, setPasswordError] = useState('');
   const [serverError, setServerError] = useState('');
   const [isUsernameFocused, setIsUsernameFocused] = useState(false);
 
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Clear user session data
-    localStorage.removeItem('cid');
-    localStorage.removeItem('name');
-
-    // Redirect to login page
     navigate('/');
-
-    // Clear browser history to prevent back navigation
-    window.history.replaceState(null, null, window.location.href);
   }, [navigate]);
 
   const handleUserNameChange = (event) => {
@@ -40,8 +32,8 @@ function LoginForm({ OnLogin }) {
   };
 
   const handleSubmit = async () => {
-    if (!userName || !password) {
-      if (!userName) {
+    if (!username || !password) {
+      if (!username) {
         setUserNameError('Please enter a valid username');
       }
       if (!password) {
@@ -51,30 +43,25 @@ function LoginForm({ OnLogin }) {
     }
 
     try {
-      const loginResponse = await api.post('/validateUser', {
-        userName,
-        password,
-      });
+      const loginResponse = await api.post('/api/v1/auth/authenticate', { username, password });
       console.log('API Response:', loginResponse);
 
-      if (loginResponse.data.Message === 'Login Successful') {
-        console.log('Login Successful', loginResponse.data.customerId);
+      if (loginResponse.data.token && loginResponse.data.refreshToken) {
+        console.log('Login Successful');
         alert('Login successful');
 
         localStorage.setItem('cid', loginResponse.data.customerId);
         localStorage.setItem('name', loginResponse.data.name);
+        localStorage.setItem('accessToken', loginResponse.data.token);
+        localStorage.setItem('refreshToken', loginResponse.data.refreshToken);
 
         navigate('/CustomerServiceMenu');
-      } else if (loginResponse.data.Message === 'Invalid UserName') {
-        alert('Login Failed....Invalid username');
-      } else if (loginResponse.data.Message === 'Invalid Password') {
-        alert('Login Failed....Invalid password');
       } else {
-        alert('Login Failed....Please enter valid username and password');
+        setServerError('Login Failed. Please check your credentials and try again.');
       }
     } catch (error) {
       console.error('Error:', error);
-      alert('An error occurred. Please try again later.');
+      setServerError('An error occurred. Please try again later.');
     }
   };
 
@@ -95,7 +82,7 @@ function LoginForm({ OnLogin }) {
           <input
             className="inputlabelnam"
             type="text"
-            value={userName}
+            value={username}
             onChange={handleUserNameChange}
             onFocus={() => setIsUsernameFocused(true)}
             onBlur={() => setIsUsernameFocused(false)}
@@ -111,17 +98,16 @@ function LoginForm({ OnLogin }) {
             value={password}
             onChange={handlePasswordChange}
           /><br />
-          <span style={{ color: 'red' }}>{userPassworderror}</span>
+          <span style={{ color: 'red' }}>{userPasswordError}</span>
         </div>
         <br />
 
         <div style={{ display: 'flex', justifyContent: 'space-around', width: '100%' }}>
           <button className="btnlogin" type="submit" onClick={handleSubmit}>Login</button>
-          <button className="btn1login" type="button" onClick={handleClear} aria-required>Clear</button>
+          <button className="btn1login" type="button" onClick={handleClear}>Clear</button>
         </div>
 
         <div className="serverError">{serverError}</div>
-
       </div>
     </div>
   );

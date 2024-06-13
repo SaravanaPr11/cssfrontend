@@ -74,11 +74,7 @@ const Profile = () => {
     navigate('/CustomerServiceMenu');
   }
   const handlelogout = () => {
-    // Clear any sensitive data here
-    localStorage.removeItem("cid");
-    localStorage.removeItem("name");
 
-    // Navigate to the login page and replace history
     navigate('/', { replace: true });
   };
 
@@ -124,15 +120,10 @@ const Profile = () => {
 
     var updateObj = {
       id: customerId,
-      name: Name,
       pincode: pincode,
       city: city,
-      dob: dob,
       doorStreet: door_street,
-      panNo: panNo,
-      state: state,
-      phoneNo: phoneNo,
-      email: Email
+      state: state
     }
     console.log("sbgfjgsdkj", updateObj);
     try {
@@ -151,6 +142,11 @@ if(door_street && pincode && city && state){
 
 }catch (error) {
       console.log("sorry data not updated", error);
+      console.log(customerId);
+      console.log(door_street);
+      console.log(city);
+      console.log(pincode);
+      
     }
   }
   return (
