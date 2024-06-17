@@ -33,15 +33,6 @@ const AccountStatement = () => {
     const formatDate = (date) => {
         return moment(date).format("DD-MM-YYYY");
     };
-
-    const handleLogout = () => {
-        // Clear any sensitive data here
-        localStorage.removeItem("cid");
-        localStorage.removeItem("name");
-    
-        // Navigate to the login page and replace history
-        navigate('/', { replace: true });
-      };
     
 
     let currentItems = [];
@@ -73,7 +64,6 @@ const AccountStatement = () => {
 
     return (
         <div className="accbody">
-            <button className="statelogout" type="button" onClick={handleLogout}>Logout</button>
             <div className="account-statement">
                 <div className="background">
                     <h2>Account Statement</h2>
