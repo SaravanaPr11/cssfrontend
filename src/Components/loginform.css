@@ -153,3 +153,8 @@ body{
     color: red;
     transform: translateY(10px);
 }
+
+.error-message {
+    color: red;
+  }
+  

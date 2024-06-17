@@ -1,67 +1,70 @@
-import { useState, useEffect } from 'react';
-import './loginform.css';
+// LoginForm.js
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from './authContext'; // Assuming this imports the useAuth hook correctly
 import api from './api/Api';
+import './loginform.css';
 
 function LoginForm() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [userNameError, setUserNameError] = useState('');
-  const [userPasswordError, setPasswordError] = useState('');
+  const [passwordError, setPasswordError] = useState('');
   const [serverError, setServerError] = useState('');
-  const [isUsernameFocused, setIsUsernameFocused] = useState(false);
-
+  const { login } = useAuth(); // Destructure login function from useAuth hook
   const navigate = useNavigate();
-
-  useEffect(() => {
-    navigate('/');
-  }, [navigate]);
 
   const handleUserNameChange = (event) => {
     setUsername(event.target.value);
-    if (event.target.value !== '') {
-      setUserNameError('');
-    }
+    setUserNameError(''); // Clear error message when user starts typing
   };
 
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
-    if (event.target.value !== '') {
-      setPasswordError('');
-    }
+    setPasswordError(''); // Clear error message when user starts typing
   };
 
   const handleSubmit = async () => {
-    if (!username || !password) {
-      if (!username) {
-        setUserNameError('Please enter a valid username');
-      }
-      if (!password) {
-        setPasswordError('Please enter a valid password');
-      }
+    let formIsValid = true;
+
+    // Validate username
+    if (!username.trim()) {
+      setUserNameError('Please enter a valid username');
+      formIsValid = false;
+    } else {
+      setUserNameError('');
+    }
+
+    // Validate password
+    if (!password.trim()) {
+      setPasswordError('Please enter a valid password');
+      formIsValid = false;
+    } else {
+      setPasswordError('');
+    }
+
+    // If form is not valid, do not proceed with submission
+    if (!formIsValid) {
       return;
     }
 
     try {
-      const loginResponse = await api.post('/api/v1/auth/authenticate', { username, password });
-      console.log('API Response:', loginResponse);
+      const { data } = await api.post('/api/v1/auth/authenticate', { username, password });
+      console.log('API Response:', data);
 
-      if (loginResponse.data.token && loginResponse.data.refreshToken) {
+      if (data.token && data.refreshToken) {
         console.log('Login Successful');
         alert('Login successful');
 
-        localStorage.setItem('cid', loginResponse.data.customerId);
-        localStorage.setItem('name', loginResponse.data.name);
-        localStorage.setItem('accessToken', loginResponse.data.token);
-        localStorage.setItem('refreshToken', loginResponse.data.refreshToken);
-
+        // Store user data in context
+        login(data); // Store user data in context
         navigate('/CustomerServiceMenu');
       } else {
         setServerError('Login Failed. Please check your credentials and try again.');
       }
     } catch (error) {
       console.error('Error:', error);
-      setServerError('An error occurred. Please try again later.');
+      setServerError('Enter valid credentials');
     }
   };
 
@@ -84,10 +87,9 @@ function LoginForm() {
             type="text"
             value={username}
             onChange={handleUserNameChange}
-            onFocus={() => setIsUsernameFocused(true)}
-            onBlur={() => setIsUsernameFocused(false)}
           />
-          <span style={{ color: 'red' }}>{userNameError}</span>
+          <br />
+          {userNameError && <span className="error-message">{userNameError}</span>}
         </div>
         <br />
         <div className="input-group">
@@ -97,8 +99,9 @@ function LoginForm() {
             type="password"
             value={password}
             onChange={handlePasswordChange}
-          /><br />
-          <span style={{ color: 'red' }}>{userPasswordError}</span>
+          />
+          <br />
+          {passwordError && <span className="error-message">{passwordError}</span>}
         </div>
         <br />
 

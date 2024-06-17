@@ -1,79 +1,78 @@
 import React from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from './authContext'; // Adjust path as necessary
 import './CustomerServiceMenu.css';
 
 function CustomerServiceMenu() {
-    const  Navigate =useNavigate();
-//home
-    const signouthandle=()=>{
-        Navigate('/');
-    }
-//my account
-    const MyAccount=()=>{
-        Navigate('/MyAccount');
-    }
-    
-    const custname=localStorage.getItem('name');
-    
-    const ServiceRequestMenu =()=>{
-        Navigate('/ServiceRequestMenu ');  
+    const navigate = useNavigate();
+    const { logout } = useAuth(); // Using useAuth to get access to logout function
+    const custname = localStorage.getItem('name');
 
-    }
-    
-    const profilepage =()=>{
-        Navigate('/profile ');  
+    const goToMyAccount = () => {
+        navigate('/MyAccount');
+    };
 
-    }
-    const viewpage=()=>{
-        Navigate('/view');
-    }
+    const goToServiceRequestMenu = () => {
+        navigate('/ServiceRequestMenu');
+    };
 
-  const handlelogout = () => {
-    // Clear any sensitive data here
-    localStorage.removeItem("cid");
-    localStorage.removeItem("name");
+    const goToProfilePage = () => {
+        navigate('/profile');
+    };
 
-    // Navigate to the login page and replace history
-    Navigate('/', { replace: true });
-  };
+    const goToViewPage = () => {
+        navigate('/view');
+    };
 
+    const handleBack = () => {
+        window.history.back(); // This will go back in the history stack
+    };
 
-  return (
-    <div className="container">
-      <div className="Wel">
-      <h1>Welcome: {custname}</h1>
-    </div>
-  <div className="cust_ser">
-    <div className="Customer">
-      <h1 className="t1">Customer Service Menu</h1>
-    </div>
+    const handleLogout = () => {
+        logout(); // Call logout function from useAuth
+        navigate('/'); // Redirect to login page
 
-    <div className="Customer1">
-  <button className="icon-button" onClick={profilepage}>
-    <i className="fa-solid fa-user"></i>
-    <span className="icontext">My Profile</span>
-  </button>
-  <button className="icon-button" onClick={MyAccount}>
-    <i className="fa-solid fa-file-invoice"></i>
-    <span>My Account</span>
-  </button>
-  <button className="icon-button" onClick={ServiceRequestMenu}>
-    <i className="fa-solid fa-square-plus"></i>
-    <span>Make a Service Request</span>
-  </button>
-  <button className="icon-button" onClick={viewpage}>
-    <i className="fa-solid fa-person-circle-question"></i>
-    <span>View Request Status</span>
-  </button>
-</div>
+        // Push a new state to the history to prevent back navigation
+        window.history.pushState(null, null, window.location.href);
+        window.onpopstate = function() {
+            navigate('/');
+        };
+    };
 
-    <div className="btn-box">
-      <button className="buttoncus" type="submit" onClick={signouthandle}>Back</button>
-      <button className="btnlogout" type="button" onClick={handlelogout}>Logout</button>
-    </div>
-  </div>
-</div>
-  )
+    return (
+        <div className="container">
+            <div className="Wel">
+                <h1>Welcome: {custname}</h1>
+            </div>
+            <div className="cust_ser">
+                <div className="Customer">
+                    <h1 className="t1">Customer Service Menu</h1>
+                </div>
+                <div className="Customer1">
+                    <button className="icon-button" onClick={goToProfilePage}>
+                        <i className="fa-solid fa-user"></i>
+                        <span className="icontext">My Profile</span>
+                    </button>
+                    <button className="icon-button" onClick={goToMyAccount}>
+                        <i className="fa-solid fa-file-invoice"></i>
+                        <span>My Account</span>
+                    </button>
+                    <button className="icon-button" onClick={goToServiceRequestMenu}>
+                        <i className="fa-solid fa-square-plus"></i>
+                        <span>Make a Service Request</span>
+                    </button>
+                    <button className="icon-button" onClick={goToViewPage}>
+                        <i className="fa-solid fa-person-circle-question"></i>
+                        <span>View Request Status</span>
+                    </button>
+                </div>
+                <div className="btn-box">
+                    <button className="buttoncus" type="button" onClick={handleBack}>Back</button>
+                    <button className="btnlogout" type="button" onClick={handleLogout}>Logout</button>
+                </div>
+            </div>
+        </div>
+    );
 }
 
 export default CustomerServiceMenu;
