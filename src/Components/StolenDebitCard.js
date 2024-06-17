@@ -33,15 +33,6 @@ function StolenDebitCard() {
     navigate("/ServiceRequestMenu");
   };
 
-  const handleLogout = () => {
-    // Clear any sensitive data here
-    localStorage.removeItem("cid");
-    localStorage.removeItem("name");
-
-    // Navigate to the login page and replace history
-    navigate('/', { replace: true });
-  };
-
   const saveStolenData = async () => {
     try {
       // Construct the request payload
@@ -95,9 +86,6 @@ function StolenDebitCard() {
 
   return (
     <div>
-      <button className="stolenlogout" type="button" onClick={handleLogout}>
-        Logout
-      </button>
       <div className="containerStylestolen">
         <h1 className="stoltit">Lost / Stolen Card Request</h1>
         <form>

@@ -21,19 +21,8 @@ const ServiceRequestMenu = () => {
     navigate("/CustomerServiceMenu");
   };
 
-  const handleLogout = () => {
-    // Clear any sensitive data here
-    localStorage.removeItem("cid");
-    localStorage.removeItem("name");
-
-    // Navigate to the login page and replace history
-    navigate('/', { replace: true });
-  };
-
-
   return (
     <div className="Service">
-      <button className='menulogout' type="button" onClick={handleLogout}>Logout</button>
       <div className="Service-Container">
         <div className="Req">
           <h1>Service Request Menu</h1>

@@ -46,14 +46,6 @@ function CreditCardRequest() {
     navigate('/ServiceRequestMenu');
   };
   
-  const handlelogout = () => {
-    // Clear any sensitive data here
-    localStorage.removeItem("cid");
-    localStorage.removeItem("name");
-
-    // Navigate to the login page and replace history
-    navigate('/', { replace: true });
-  };
   const saveCreditData= async () => {
     var saveObj1 = {
       serviceRequestId:2,
@@ -92,9 +84,7 @@ function CreditCardRequest() {
   const asteriskStyle = { color: 'red' };
 
   return (
-    <div>
-      <button className='cardlogout' type="button" onClick={handlelogout}>Logout</button>
-      
+    <div>      
       <div className='containerStyle'>
       <h1 className="credittit">Card Request</h1>
         <form onSubmit={handleSubmit}>

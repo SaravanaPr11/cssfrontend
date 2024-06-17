@@ -73,10 +73,6 @@ const Profile = () => {
   const Backhandle = () => {
     navigate('/CustomerServiceMenu');
   }
-  const handlelogout = () => {
-
-    navigate('/', { replace: true });
-  };
 
   const getprofile = async (customerId) => {
     await api.get(`getdetails/${customerId}`)
@@ -153,7 +149,6 @@ if(door_street && pincode && city && state){
     <div className="body1">
     
     <div className="Profile">
-    <button className='profilelogout' type="button" onClick={handlelogout}>Logout</button>
     <h1 className='h1profil'>My Profile Details</h1>
     
     <div className='f1'>

@@ -115,15 +115,6 @@ const RequestStatus = () => {
     setRequestType(e.target.value);
   }
 
-  const handlelogout = () => {
-    // Clear any sensitive data here
-    localStorage.removeItem("cid");
-    localStorage.removeItem("name");
-
-    // Navigate to the login page and replace history
-    navigate('/', { replace: true });
-  };
-
   const getServiceType = (serviceid) => {
     switch(serviceid) {
       case 1:
@@ -168,7 +159,6 @@ const RequestStatus = () => {
   return (
     <div className="srcont">
       <div className="T_Container">
-        <button className='viewlogout' type="button" onClick={handlelogout}>Logout</button>
         <div className="T_title"><h1>View Request Status</h1></div>
         <div className="T_header">
           <h2 className='book123'>Name: {custname}</h2>

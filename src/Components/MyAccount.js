@@ -36,21 +36,11 @@ const handleAccountStatement=(accountNumber)=>{
   const handleBack = () => {
     navigate("/CustomerServiceMenu");
   };
-  const handlelogout = () => {
-    // Clear any sensitive data here
-    localStorage.removeItem("cid");
-    localStorage.removeItem("name");
-
-    // Navigate to the login page and replace history
-    navigate('/', { replace: true });
-  };
-
 
   
 
   return (
     <div className="centered-container">
-      <button  className="btnlogout2" type="button" onClick={handlelogout}>Logout</button>
       <h4 className="accountname">Welcome: {custname}</h4>
       <div className="my-account-container">
         <div className="my-Accounts">

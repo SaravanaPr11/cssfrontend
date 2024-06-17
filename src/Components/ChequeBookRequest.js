@@ -31,16 +31,6 @@ const ChequeBookRequest = () => {
     navigate('/ServiceRequestMenu');
   };
 
-  const handleLogout = () => {
-    // Clear any sensitive data here
-    localStorage.removeItem("cid");
-    localStorage.removeItem("name");
-
-    // Navigate to the login page and replace history
-    navigate('/', { replace: true });
-  };
-
-
   const saveChequeData = async () => {
     const saveObj = {
       serviceRequestId: 1,
@@ -90,7 +80,6 @@ const ChequeBookRequest = () => {
 
   return (
     <div>
-      <button className='checklogout' type="button" onClick={handleLogout}>Logout</button>
       <div className='containerStylecheque'>
         <h1 className='book'>Cheque Book Request</h1>
         <label className='namlab1'>Name</label>
