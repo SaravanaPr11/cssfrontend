@@ -1,4 +1,3 @@
-// authContext.js
 import React, { createContext, useState, useContext, useEffect } from 'react';
 import api from './api/Api'; // Adjust path as necessary
 
@@ -11,26 +10,24 @@ export const AuthProvider = ({ children }) => {
     // Check if user is authenticated on initial load
     const token = localStorage.getItem('token');
     if (token) {
-      // Optionally, you can decode the JWT token and extract user info if needed
-      // const decodedToken = decode(token);
-      // setUser(decodedToken);
-      setUser({ token }); // For simplicity, setting only token
+      const name = localStorage.getItem('name');
+      const cid = localStorage.getItem('cid');
+      setUser({ token, name, cid });
     }
   }, []);
 
   const login = async (username, password) => {
     try {
       const response = await api.post('/api/v1/auth/authenticate', { username, password });
-      const { token, refreshToken } = response.data;
+      const { token, refreshToken, name, customerId } = response.data;
 
-      // Store tokens in localStorage
+      // Store tokens and user info in localStorage
       localStorage.setItem('token', token);
       localStorage.setItem('refreshToken', refreshToken);
+      localStorage.setItem('name', name);
+      localStorage.setItem('cid', customerId);
 
-      // Optionally, decode JWT token and set user info
-      // const decodedToken = decode(token);
-      // setUser(decodedToken);
-      setUser({ token }); // For simplicity, setting only token
+      setUser({ token, name, cid: customerId }); // Set user state with token, name, and customerId
     } catch (error) {
       console.error('Login error', error);
       throw error; // Propagate the error for handling in components
@@ -38,9 +35,11 @@ export const AuthProvider = ({ children }) => {
   };
 
   const logout = () => {
-    // Clear tokens from localStorage
+    // Clear tokens and user info from localStorage
     localStorage.removeItem('token');
     localStorage.removeItem('refreshToken');
+    localStorage.removeItem('name');
+    localStorage.removeItem('cid');
 
     // Clear user state
     setUser(null);

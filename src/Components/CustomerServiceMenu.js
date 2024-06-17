@@ -31,12 +31,6 @@ function CustomerServiceMenu() {
     const handleLogout = () => {
         logout(); // Call logout function from useAuth
         navigate('/'); // Redirect to login page
-
-        // Push a new state to the history to prevent back navigation
-        window.history.pushState(null, null, window.location.href);
-        window.onpopstate = function() {
-            navigate('/');
-        };
     };
 
     return (
