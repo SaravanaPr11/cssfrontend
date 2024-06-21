@@ -13,6 +13,7 @@
 }
 
 .credittit {
+  padding-top: 10px;
   text-align: center;
   color: #e4d9ba;
   font-size: 23px;
@@ -22,14 +23,14 @@
 
 .containerStyle {
   height: 65vh;
-  margin-top: 80px;
   margin-left: 23%;
   border-radius: 20px;
   background-color: rgba(13, 26, 52, 0.9);
   color: #e8e8f0;
-  width: 54%;
+  width: 52%;
   padding: 20px 40px;
-  font-size: 18px
+  font-size: 18px;
+  transform: translateY(7em);
 }
 
 .namecredit {

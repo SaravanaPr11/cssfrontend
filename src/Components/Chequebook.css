@@ -14,6 +14,7 @@
 
 .book {
   padding-bottom: 12px;
+  padding-top: 5px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 23px;
   text-align: center;
@@ -28,9 +29,9 @@
   width: 50%;
   padding: 20px 40px ;
   color: #e8e8f0;
-  height: 60vh;
+  height: 61vh;
   margin: auto;
-  margin-top: 7.8%;
+  transform: translateY(8em);
 }
 
 .book1 {
@@ -116,6 +117,7 @@
   margin: 4px 10px;
   cursor: pointer;
   border-radius: 4px;
+  transform: translateY(-8px);
 }
 
 .button-56:hover {

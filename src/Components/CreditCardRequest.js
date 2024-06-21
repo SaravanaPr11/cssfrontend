@@ -1,7 +1,7 @@
 import React, { useState,useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import './CreditCardRequest.css';
-import api from "./api/Api";
+import { api } from './api/Api';
 
 function CreditCardRequest() {
   const navigate = useNavigate();

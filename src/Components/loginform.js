@@ -15,12 +15,14 @@ function LoginForm() {
 
   const handleUserNameChange = (event) => {
     setUsername(event.target.value);
-    setUserNameError(''); // Clear error message when user starts typing
+    setUserNameError(''); // Clear username error message when user starts typing
+    setServerError(''); // Clear server error message when user starts typing
   };
 
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
-    setPasswordError(''); // Clear error message when user starts typing
+    setPasswordError(''); // Clear password error message when user starts typing
+    setServerError(''); // Clear server error message when user starts typing
   };
 
   const handleSubmit = async (event) => {

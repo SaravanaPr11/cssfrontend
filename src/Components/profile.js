@@ -2,8 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import './profile.css';
 import { useNavigate } from 'react-router-dom';
-import api from './api/Api';
-
+import { api } from './api/Api';
 
 const Profile = () => {
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import "./viewrequest.css";
-import api from './api/Api';
+import { api } from './api/Api';
 import { useNavigate } from 'react-router-dom';
 import moment from 'moment';
 

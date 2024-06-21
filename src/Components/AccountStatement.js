@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./AccountStatement.css";
-import api from "./api/Api";
+import { api } from './api/Api';
 import { useParams } from "react-router-dom";
 import moment from 'moment';
 
