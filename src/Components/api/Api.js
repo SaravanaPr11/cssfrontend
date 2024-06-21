@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { useAuth } from './AuthContext';
+import { useAuth } from '../authContext';
 
 const api = axios.create({
   baseURL: 'http://localhost:2026/bankapps',
